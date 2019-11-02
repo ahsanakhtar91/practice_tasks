@@ -1,4 +1,4 @@
-# practice_tasks
+# Practice Tasks
 
 A repository for a few of my recent sample coding practice tasks
 
