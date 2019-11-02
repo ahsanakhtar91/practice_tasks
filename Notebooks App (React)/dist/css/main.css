@@ -1,0 +1,45 @@
+body
+{
+    background-color: #fffcfe;
+}
+
+.top-app-bar, .app-body
+{
+    text-align: center;
+    margin: auto;
+    width: 60%;
+}
+
+.login-body, .app-body
+{
+    padding-top: 30px;
+}
+
+.home, .notebook
+{
+    font-family: Roboto;
+    font-size: 14px;
+}
+
+.table-header
+{
+    background-color: lightgrey;
+    height: 50px;
+    display: grid;
+    grid-template-columns: 75% 20% 0%;
+    align-items: center;
+    text-align: left;
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+.margins
+{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.note-heading
+{
+    font-weight: bold !important;
+}
