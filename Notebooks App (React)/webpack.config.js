@@ -25,7 +25,9 @@ module.exports = {
    ],
   devServer: {
     contentBase: './dist',
-    hot: true
+    hot: true,
+    //https: true,
+    port: 8080
   },
   devtool: 'source-map'
 };
