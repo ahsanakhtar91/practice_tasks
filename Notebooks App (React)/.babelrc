@@ -1,0 +1,11 @@
+{
+    "presets": [
+      "@babel/react",
+      "@babel/env"
+    ],
+    "plugins": [
+        "@babel/plugin-proposal-class-properties",
+        "jsx-control-statements",
+        "@babel/transform-runtime"
+      ]
+  }
