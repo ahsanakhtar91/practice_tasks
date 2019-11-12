@@ -25,6 +25,6 @@ written in NodeJS on Back End. Core functionalities of this App:
 
 Steps to run the Notebooks App:
 - Install "Allow CORS: Access-Control-Allow-Origin" extension in Chrome browser and enable it. (Needed to Access a Node API)
-- Run command "yarn install" OR "npm install" on the root directory of Notebooks App to install the node packages.
+- Run command <code>yarn install</code> OR "npm install" on the root directory of Notebooks App to install the node packages.
 - Now run Node Server as it contains API to get the GitHub Access Tokens on Backend. Use command: "node node-server.js"
 - Finally, run the React Application by running the command "yarn start" OR "npm start" on the root directory.
