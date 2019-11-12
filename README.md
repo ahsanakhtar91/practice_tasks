@@ -5,13 +5,13 @@ A repository for a few of my recent sample coding practice tasks
 It currently includes 2 of my practice tasks:
 
 ---------------------------
-# Fluid WebPage (ClipMine)
+1) Fluid WebPage (ClipMine)
 ---------------------------
 
 A static web page created with emphasis on fluid design, created using HTML, CSS Grids, Flexbox
 
 ------------------------
-# Notebooks App (React)
+2) Notebooks App (React)
 ------------------------
 
 A sample app demonstrating the use of ReactJS, JavaScript, JSX, HTML, CSS, MaterialUI, Webpack, React Router, etc. on Front End and an API
