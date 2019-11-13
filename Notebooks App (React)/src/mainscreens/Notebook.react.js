@@ -75,22 +75,6 @@ class Notebook extends React.Component
     }
   }
 
-  // componentDidUpdate()
-  // {
-  //   if(Object.keys(this.state.notebookData.files).length == 0)
-  //   {
-  //     GistAPIUtils.getNotebook(this.props.match.params.notebook_id)
-  //       .then((successResponse) =>
-  //       {
-  //         this.setState({notebookData: successResponse});
-  //       })
-  //       .catch((errorResponse) =>
-  //       {
-  //         console.log('err_get_notebook ==> ', errorResponse);
-  //       });
-  //     }
-  // }
-
   render() 
   {
     return  <div className="notebook">
@@ -128,18 +112,15 @@ class Notebook extends React.Component
                     <Label size="large" text="Notes" margin="true" />
                     <Paper>
                       {
-                        Object.entries(this.state.notebookData.files).map((fileObj) => 
+                        Object.entries(this.state.notebookData.files).map((fileObj, i) => 
                         (
-                          <ExpansionPanel>
+                          <ExpansionPanel key={i+1}>
                             <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
                               <Typography className={"note-heading"}>{fileObj[0]}</Typography>
                             </ExpansionPanelSummary>
                             <ExpansionPanelDetails>
                               <Typography>
                                 {fileObj[1].content}
-                                {/* <IconButton onClick={() => alert(0)}>
-                                  <DeleteIcon color="secondary"/>
-                                </IconButton> */}
                               </Typography>
                             </ExpansionPanelDetails>
                           </ExpansionPanel>

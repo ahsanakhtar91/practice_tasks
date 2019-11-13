@@ -46,8 +46,9 @@ export default class FormPopup extends React.Component
                 <DialogTitle id="form-dialog-title">{this.props.action} {this.props.type}</DialogTitle>
                 <DialogContent>
                   {
-                    this.props.inputFields.map((field) => (
+                    this.props.inputFields.map((field, i) => (
                       <TextField
+                        key={i+1}
                         ref={field.replace(/\s/gi, '')}
                         autoFocus
                         margin="dense"

@@ -1,18 +1,23 @@
 const express = require('express');
 const fetch = require('node-fetch');
 const app = express();
-//var cors = require('cors');
-//const fs = require("fs");
+var cors = require('cors');
 
-//app.use(cors());
+app.use(cors());
 
-const clientSecret = 'a324f898d773b8c39f88e53f9099bb940524972a';
+const clientSecret = 'a324f898d773b8c39f88e53f9099bb940524972a'; //GitHub App Client Secret Key
 
 app.get('/getAccessToken', function (req, res) 
 {
     let finalResponse = {};
 
-    fetch('https://github.com/login/oauth/access_token?client_id='+req.query.clientId+'&client_secret='+clientSecret+'&code='+req.query.code, {method: "POST", body: {"data": ""}})
+    fetch('https://github.com/login/oauth/access_token?client_id='+req.query.clientId+'&client_secret='+clientSecret+'&code='+req.query.code, 
+        {
+            method: "POST", 
+            body: {
+                "data": ""
+            }
+        })
     .then(function(response) 
     {
         return response.text();
@@ -24,9 +29,12 @@ app.get('/getAccessToken', function (req, res)
 
         finalResponse.accessToken = access_token;
 
-        return fetch('https://api.github.com/user', {method: "GET", headers: {
+        return fetch('https://api.github.com/user', {
+                                                        method: "GET", 
+                                                        headers: {
                                                             'Authorization': 'token ' + access_token
-                                                        }})
+                                                        }
+                                                    })
     })
     .then(function(resp) 
     {
@@ -37,7 +45,7 @@ app.get('/getAccessToken', function (req, res)
         finalResponse.user = jsonResp.login;
         finalResponse.name = jsonResp.name;
 
-        console.log('finalResponse ==>', finalResponse);
+        console.log('ServerResponse =>', finalResponse);
 
         res.send(finalResponse);
     })
