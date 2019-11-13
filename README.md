@@ -24,8 +24,8 @@ written in NodeJS on Back End. Core functionalities of this App:
 - Deleting Notebooks
 
 Steps to run the Notebooks App:
-- Install "Allow CORS: Access-Control-Allow-Origin" extension in Chrome browser and enable it. (Needed to Access a Node API)
 - Run command <code>yarn install</code> OR <code>npm install</code> on the root directory of Notebooks App to install the node packages.
 - Now run Node Server as it contains API to get the GitHub Access Tokens on Backend. Use command:<br>
 <code>node node-server.js</code>
 - Finally, run the ReactJS Application by running the command <code>yarn start</code> OR <code>npm start</code> on the root directory.
+- Access the app by using secure protocol: <code>https://localhost:8080</code>
