@@ -36,6 +36,7 @@ Steps to run the Notebooks App:
 A Sample Practice App involving the use of React, Redux, React Router, AntDesign, etc. Core functionalities of this App:
 - Creating inventory items with user input.
 - Viewing inventory items in a Table.
+- Deleting inventory items.
 
 Steps to run the Redux App:
 - Run command <code>yarn install</code> OR <code>npm install</code> on the root directory of Notebooks App to install the node packages.
