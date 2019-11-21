@@ -39,6 +39,6 @@ A Sample Practice App involving the use of React, Redux, React Router, AntDesign
 - Deleting inventory items.
 
 Steps to run the Redux App:
-- Run command <code>yarn install</code> OR <code>npm install</code> on the root directory of Notebooks App to install the node packages.
+- Run command <code>yarn install</code> OR <code>npm install</code> on the root directory of Redux App to install the node packages.
 - Run the App by running the command <code>yarn start</code> OR <code>npm start</code> on the root directory.
 - Access the app in your browser with: <code>http://localhost:8080</code>
