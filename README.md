@@ -33,7 +33,7 @@ Steps to run the Notebooks App:
 3) Redux App
 ------------
 
-A Sample Practice App involving the use of React, Redux, React Router, AntDesign, etc. Core functionalities of this App:
+A Sample Practice App involving the use of React, Redux, Redux Saga, React Router, AntDesign, etc. Core functionalities of this App:
 - Creating inventory items with user input.
 - Viewing inventory items in a Table.
 - Deleting inventory items.
