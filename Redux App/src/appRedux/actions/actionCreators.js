@@ -1,6 +1,6 @@
 import ActionTypes from "./actionTypes";
 
-export const addItem = (name, quantity) => {debugger;
+export const addItem = (name, quantity) => {
     return {
         type: ActionTypes.ADD_ITEM_REQUESTED,
         payload: {
