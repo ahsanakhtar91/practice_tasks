@@ -1,22 +1,20 @@
 import ActionTypes from "./actionTypes";
 
-export const addItem = (name, quantity) => {
+export const addItem = (name, quantity) => {debugger;
     return {
-        type: ActionTypes.ADD_ITEM ,
+        type: ActionTypes.ADD_ITEM_REQUESTED,
         payload: {
             name, 
             quantity
         }
-        
     }
 }
 
 export const deleteItem = (index) => {
     return {
-        type: ActionTypes.DELETE_ITEM,
+        type: ActionTypes.DELETE_ITEM_REQUESTED,
         payload: {
             index
         }
-        
     }
 }

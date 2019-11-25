@@ -1,7 +1,7 @@
 import React from "react";
 import { Input, InputNumber, Button, Row, Col } from 'antd';
 import { connect } from "react-redux";
-import {addItem} from "../appRedux/actions/actionCreators";
+import { addItem } from "../appRedux/actions/actionCreators";
 const InputGroup = Input.Group;
 
 class ItemForm extends React.Component 
@@ -13,8 +13,7 @@ class ItemForm extends React.Component
 
   onAddItem()
   {
-    //this.props.dispatch(addItem);
-
+    //dispatching action
     this.props.addItem(this.refs.item.state.value, this.refs.quantity.inputNumberRef.state.value);
   }
 

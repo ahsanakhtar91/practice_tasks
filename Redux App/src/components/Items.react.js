@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { deleteItem } from "../appRedux/actions/actionCreators";
-import { Table } from "antd";
+import { Table, Icon } from "antd";
 import { connect } from 'react-redux';
 
 class Items extends React.Component 
@@ -13,6 +13,7 @@ class Items extends React.Component
 
   onDeleteItem(index)
   {
+    //dispatching action
     this.props.deleteItem(index);
   }
 
@@ -31,7 +32,7 @@ class Items extends React.Component
       },
       {
         title: "Action",
-        render: () => <div style={{cursor:"pointer"}} onClick={this.onDeleteItem.bind(this, i++)}>X</div>
+        render: () => <Icon type="delete" theme="twoTone" twoToneColor="#f00" onClick={this.onDeleteItem.bind(this, i++)}/>
       }
     ];
 
@@ -55,6 +56,5 @@ const mapDispatchToProps = {
 
 
 export default connect(
-                  mapStateToProps,
-                  mapDispatchToProps
-      )(Items);
+  mapStateToProps,
+  mapDispatchToProps)(Items);

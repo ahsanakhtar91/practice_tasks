@@ -4,7 +4,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import ItemsApp from "./app/ItemsApp.app";
 import { Provider } from 'react-redux';
-import ItemStore from './appRedux/ItemStore';
+import ItemStore from './appRedux/store/ItemStore';
 
 
 ReactDOM.render(

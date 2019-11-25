@@ -45,7 +45,7 @@ export default class ItemsApp extends React.Component
                     </div>
                 </Content>
 
-                <Footer style={{ textAlign: "center" }}>A Sample Practice App involving the use of React, Redux, React Router, AntDesign, etc.</Footer>
+                <Footer style={{ textAlign: "center" }}>A Sample Practice App involving the use of React, Redux, Redux Saga, React Router, AntDesign, etc.</Footer>
             </Router>);
     }
 }

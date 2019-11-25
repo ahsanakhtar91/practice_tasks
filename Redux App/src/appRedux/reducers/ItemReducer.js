@@ -3,6 +3,7 @@ import ActionTypes from "../actions/actionTypes";
 export const ItemReducer = (appState = {items: []}, action) => {
     switch (action.type) {
         case ActionTypes.ADD_ITEM:
+
           return {
               items: [
                  ...appState.items,
@@ -12,11 +13,15 @@ export const ItemReducer = (appState = {items: []}, action) => {
                  }
               ]
           }
-          case ActionTypes.DELETE_ITEM:
-            appState.items.splice(action.payload.index, 1);
+
+        case ActionTypes.DELETE_ITEM:
+
+            let newItemsArray = [...appState.items];
+            newItemsArray.splice(action.payload.index, 1);
             return {
-                items: [...appState.items]
+                items: newItemsArray
             }
+
         default:
           return appState;
       }
