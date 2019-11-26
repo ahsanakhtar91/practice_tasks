@@ -51,5 +51,5 @@ A copy of <code>Redux App</code> (App # 3), but with many additional technical i
 - Added <code>Immer Reducer</code> and managed the same running flow of App using Immer Reducer, React, Redux, Redux Saga, etc.
 - Refoctoring of App's code with all new folder structure (will be beneficial in future if App needs scaling OR additional features).
 
-Steps to run the Redux App:
+Steps to run the Redux App (Immer):
 - Same as App # 3
