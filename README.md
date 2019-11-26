@@ -2,7 +2,7 @@
 
 A repository for a few of my recent sample coding practice tasks
 
-It currently includes 3 of my practice tasks:
+It currently includes 4 of my practice tasks:
 
 ---------------------------
 1) Fluid WebPage (ClipMine)
@@ -42,3 +42,14 @@ Steps to run the Redux App:
 - Run command <code>yarn install</code> OR <code>npm install</code> on the root directory of Redux App to install the node packages.
 - Run the App by running the command <code>yarn start</code> OR <code>npm start</code> on the root directory.
 - Access the app in your browser with: <code>http://localhost:8080</code>
+
+--------------------
+4) Redux App (Immer)
+--------------------
+
+Same <code>Redux App</code> (App # 3). But with additional technical implementations like:
+- Added <code>Immer Reducer</code> and managed the same running flow of App using Immer Reducer, React, Redux, Redux Saga, etc.
+- Refoctoring of App's code with all new folder structure (will be beneficial in future if App needs scaling OR additional features).
+
+Steps to run the Redux App:
+- Same as App # 3
