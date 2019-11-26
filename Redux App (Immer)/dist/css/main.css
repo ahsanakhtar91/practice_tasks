@@ -1,0 +1,12 @@
+body
+{
+    background-color: rgb(238, 238, 238);
+    font-family: Roboto;
+}
+
+#app
+{
+    vertical-align: center;
+    margin: auto;
+    width: 60%;
+}

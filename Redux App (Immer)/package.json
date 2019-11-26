@@ -1,0 +1,44 @@
+{
+  "name": "redux_immer_app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server"
+  },
+  "author": "AhsanAkhtar",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
+    "@babel/runtime": "^7.6.3",
+    "antd": "^3.25.2",
+    "cors": "^2.8.5",
+    "immer-reducer": "^0.7.9",
+    "node-fetch": "^2.6.0",
+    "react": "^16.10.2",
+    "react-dom": "^16.10.2",
+    "react-redux": "^7.1.3",
+    "react-router-dom": "^5.1.2",
+    "redux": "^4.0.4",
+    "redux-saga": "^1.1.3",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.9",
+    "webpack-dev-server": "^3.8.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.6.4",
+    "@babel/plugin-transform-runtime": "^7.6.2",
+    "@babel/preset-env": "^7.6.3",
+    "@babel/preset-react": "^7.6.3",
+    "babel-loader": "^8.0.6",
+    "babel-plugin-import": "^1.12.2",
+    "babel-plugin-jsx-control-statements": "^4.0.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "css-loader": "^3.2.0",
+    "less": "^3.10.3",
+    "less-loader": "^5.0.0",
+    "postcss-loader": "^3.0.0",
+    "react-hot-loader": "^4.12.15",
+    "style-loader": "^1.0.0"
+  }
+}
