@@ -47,7 +47,7 @@ Steps to run the Redux App:
 4) Redux App (Immer)
 --------------------
 
-Same <code>Redux App</code> (App # 3). But with additional technical implementations like:
+A copy of <code>Redux App</code> (App # 3), but with many additional technical implementations like:
 - Added <code>Immer Reducer</code> and managed the same running flow of App using Immer Reducer, React, Redux, Redux Saga, etc.
 - Refoctoring of App's code with all new folder structure (will be beneficial in future if App needs scaling OR additional features).
 
