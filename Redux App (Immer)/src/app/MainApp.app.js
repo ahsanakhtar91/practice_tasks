@@ -22,7 +22,7 @@ export default class MainApp extends React.Component
                         View Items
                     </Link>
                     &nbsp; | &nbsp;
-                    <Link to="/item">
+                    <Link to="/add">
                         Add Item
                     </Link>
                 </Header>
@@ -33,7 +33,7 @@ export default class MainApp extends React.Component
                             <div className="app-body">
                                 <Route exact path="/" component={Items} />
                                     
-                                <Route exact path="/item" component={ItemForm} />
+                                <Route path="/add" component={ItemForm} />
                                 
                                 <Route path="/item/:item_name" component={ItemView} />
                             </div>

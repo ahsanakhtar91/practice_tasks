@@ -15,8 +15,10 @@ class ItemForm extends React.Component
 
   onAddItem()
   {
+    const itemName = this.refs.item.state.value ? this.refs.item.state.value : "item_" + new Date().getTime();
+
     //dispatching action
-    this.props.addItemRequested({name: this.refs.item.state.value, quantity: this.refs.quantity.inputNumberRef.state.value});
+    this.props.addItemRequested({name: itemName, quantity: this.refs.quantity.inputNumberRef.state.value});
     
     this.props.history.goBack();  // OR this.props.history.push("/");
   }
