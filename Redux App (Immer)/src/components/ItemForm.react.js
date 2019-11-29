@@ -17,6 +17,8 @@ class ItemForm extends React.Component
   {
     //dispatching action
     this.props.addItemRequested({name: this.refs.item.state.value, quantity: this.refs.quantity.inputNumberRef.state.value});
+    
+    this.props.history.goBack();  // OR this.props.history.push("/");
   }
 
   render() 

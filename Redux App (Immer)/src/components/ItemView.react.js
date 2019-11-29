@@ -10,7 +10,7 @@ export default class ItemView extends React.Component
   render() 
   {
     return  <div className="itemview">
-              Item Details and Update Form Here
+              Item Details and Update Form Here...
             </div>
   }
 }

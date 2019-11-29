@@ -31,15 +31,11 @@ export default class MainApp extends React.Component
                     <div style={{ background: "#fff", padding: 24, minHeight: 280 }}>
                         <Switch>
                             <div className="app-body">
-                                <Route exact path="/">
-                                    <Items/>
-                                </Route>
-                                <Route exact path="/item">
-                                    <ItemForm/>
-                                </Route>
-                                <Route path="/item/:item_id">
-                                    <ItemView/>
-                                </Route>
+                                <Route exact path="/" component={Items} />
+                                    
+                                <Route exact path="/item" component={ItemForm} />
+                                
+                                <Route path="/item/:item_name" component={ItemView} />
                             </div>
                         </Switch>
                     </div>
