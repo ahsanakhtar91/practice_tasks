@@ -1,0 +1,14 @@
+{
+    "presets": [
+      "@babel/react",
+      "@babel/env"
+    ],
+    "plugins": [
+        ["import", 
+          { "libraryName": "antd", "style": "css" }
+        ],
+        "@babel/plugin-proposal-class-properties",
+        "jsx-control-statements",
+        "@babel/transform-runtime"
+      ]
+  }
