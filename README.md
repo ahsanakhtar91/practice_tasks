@@ -55,7 +55,7 @@ Steps to run the Redux App (Immer):
 - Same as App # 3
 
 ----------------------------
-3) Product Items App (React)
+5) Product Items App (React)
 ----------------------------
 
 A Products List & Cart App implemented using React, Redux, Ant Design, Reducers, Redux Saga, React Router, LESS, Babel, Webpack, etc. Core functionalities of this App:
