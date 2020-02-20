@@ -1,13 +1,13 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Items from "../components/ItemsList.react";
 import Cart from "../components/Cart.react";
 import { connect } from 'react-redux';
 import { Layout, Select, Icon } from 'antd';
-import { fetchItemsRequested, filterItems } from "../appRedux/actions/actionCreators";
-import "../../src/less/main.less";
-
 const { Header, Content, Footer } = Layout;
+import { fetchItemsRequested, filterItems } from "../appRedux/actions/actionCreators";
+
+import "../../src/less/main.less";
 
 class MainApp extends React.Component 
 {
@@ -61,7 +61,7 @@ class MainApp extends React.Component
                     </div>
                 </Content>
 
-                <Footer className="footer">A Simple Products List & Carts Page implemented using these technologies: React, Redux, Ant Design, Reducers, Redux Saga, React Router, LESS, Babel, Webpack, etc.</Footer>
+                <Footer className="footer">A Products List & Cart App implemented using these technologies: React, Redux, Ant Design, Reducers, Redux Saga, React Router, LESS, Babel, Webpack, etc.</Footer>
             </Router>);
     }
 }

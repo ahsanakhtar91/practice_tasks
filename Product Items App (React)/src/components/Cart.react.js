@@ -1,6 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { Table, Icon, Avatar, Button, InputNumber } from "antd";
+import { Table, Avatar, Button } from "antd";
 import { connect } from 'react-redux';
 import AppConstants from "../constants/appConstants";
 

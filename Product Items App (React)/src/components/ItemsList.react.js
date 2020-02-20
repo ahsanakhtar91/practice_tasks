@@ -1,6 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { Table, Icon, Avatar, Spin, Button } from "antd";
+import { Table, Avatar, Spin, Button } from "antd";
 import { connect } from 'react-redux';
 
 import { addToCart } from "../appRedux/actions/actionCreators";
