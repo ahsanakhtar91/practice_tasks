@@ -32,11 +32,11 @@ class Cart extends React.Component
     return  <table className="cart-footer">
               <tr>
                 <td className="footer-label total-quantity">Total Items:</td>
-                <td className="footer-value">{totalItems}</td>
+                <td className="footer-value cart-footer-value">{totalItems}</td>
               </tr>
               <tr>
                 <td className="footer-label">Total Price:</td>
-                <td className="footer-value total-price">${totalPrice.toString().indexOf('.') !== -1 ? parseFloat(totalPrice).toFixed(2) : totalPrice}</td>
+                <td className="footer-value cart-footer-value total-price">$ {totalPrice.toString().indexOf('.') !== -1 ? parseFloat(totalPrice).toFixed(2) : totalPrice}</td>
               </tr>
             </table>
   }
