@@ -53,3 +53,22 @@ A copy of <code>Redux App</code> (App # 3), but with many additional technical i
 
 Steps to run the Redux App (Immer):
 - Same as App # 3
+
+----------------------------
+3) Product Items App (React)
+----------------------------
+
+A Products List & Cart App implemented using React, Redux, Ant Design, Reducers, Redux Saga, React Router, LESS, Babel, Webpack, etc. Core functionalities of this App:
+- Fetching Products from an API and then Viewing that Products List.
+- Filtering Products on the basis of Colour.
+- Adding Products to Cart.
+- Viewing Cart Items individually.
+- Changing (Incrementing/Decrementing) Product Quantities in Cart. 
+- Maintaining Stock of Products and handling all relevant use cases while adding or removing Products in Cart.
+- Deleting Products from Cart.
+- Maintaining and Showing Total Items and the Total Price below the Cart.
+
+Steps to run the Product Items App:
+- Run command <code>yarn install</code> OR <code>npm install</code> on the root directory of Product Items App to install the node packages.
+- Run the App by running the command <code>yarn start</code> OR <code>npm start</code> on the root directory.
+- Access the app in your browser with: <code>http://localhost:3000</code>
