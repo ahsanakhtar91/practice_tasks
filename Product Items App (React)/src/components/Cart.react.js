@@ -31,12 +31,12 @@ class Cart extends React.Component
 
     return  <table className="cart-footer">
               <tr>
-                <td className="footer-label total-quantity">Total Items:</td>
-                <td className="footer-value cart-footer-value">{totalItems}</td>
+                <td className="footer-label">Total Items:</td>
+                <td className="footer-value">{totalItems}</td>
               </tr>
               <tr>
                 <td className="footer-label">Total Price:</td>
-                <td className="footer-value cart-footer-value total-price">$ {totalPrice.toString().indexOf('.') !== -1 ? parseFloat(totalPrice).toFixed(2) : totalPrice}</td>
+                <td className="footer-value">$ {totalPrice.toString().indexOf('.') !== -1 ? parseFloat(totalPrice).toFixed(2) : totalPrice}</td>
               </tr>
             </table>
   }
@@ -69,7 +69,7 @@ class Cart extends React.Component
       {
         title: "Quantity",
         render: (item) => <div>
-                            <Button size="small" icon="minus" disabled={item.quantity === 0 ? true : false} onClick={() => this.onDecrementFromCart(item.id)}/>
+                            <Button size="small" icon="minus" disabled={item.quantity === 1 ? true : false} onClick={() => this.onDecrementFromCart(item.id)}/>
                             <div className="cart-quantity-display">{item.quantity}</div>
                             <Button size="small" icon="plus" disabled={item.quantity === AppConstants.defaultItemStock ? true : false} onClick={() => this.onIncrementInCart(item.id)} />
                           </div>
