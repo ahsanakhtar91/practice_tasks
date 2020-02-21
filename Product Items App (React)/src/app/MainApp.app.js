@@ -34,8 +34,8 @@ class MainApp extends React.Component
                 <Header>
                     <div className="header">
                         <span style={{marginRight: "10px"}}>Filter Products by Colour:</span>
-                        <Select defaultValue={null} style={{ width: 120 }} onChange={this.onColourSelected.bind(this)}>
-                            <Select.Option value={null}>None</Select.Option>
+                        <Select size="small" defaultValue={null} style={{ width: 120 }} onChange={this.onColourSelected.bind(this)}>
+                            <Select.Option value={null}>No Filter</Select.Option>
                             <Select.Option value="Black">Black</Select.Option>
                             <Select.Option value="Stone">Stone</Select.Option>
                             <Select.Option value="Red">Red</Select.Option>
