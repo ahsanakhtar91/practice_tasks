@@ -81,9 +81,9 @@ A sample Registration Form implemented in React using React Hooks, MaterialUI, R
 - Routing to a Registration Form
 - Rendering a sample Registration Form with various fields (First Name, Last Name, Email, Password and DOB)
 - Adding relevant validations upon all the fields and showing all the error messages on UI in a presentable way.
-- Submitting the form only when all validation are passed on all fields.
+- Submitting the form only when all validations are passed on all fields.
 
 Steps to run the Registration Form:
-- Run command <code>yarn install</code> OR <code>npm install</code> on the root directory of Product Items App to install the node packages.
+- Run command <code>yarn install</code> OR <code>npm install</code> on the root directory of Registration Form App to install the node packages.
 - Run the App by running the command <code>yarn start</code> OR <code>npm start</code> on the root directory.
 - Access the app in your browser with: <code>http://localhost:8080</code>
