@@ -1,0 +1,40 @@
+body
+{
+    background-color: #fffcfe;
+}
+
+.top-app-bar, .app-body
+{
+    text-align: center;
+    margin: auto;
+    width: 60%;
+}
+
+.top-app-bar a{
+    margin-left: -16px;
+}
+
+.form-field{
+    margin-top: 15px;
+}
+
+.app-body
+{
+    padding-top: 30px;
+}
+
+.home, .registration
+{
+    font-family: Roboto;
+    font-size: 14px;
+}
+
+.registration{
+    margin-top: 40px;
+}
+
+.margins
+{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
