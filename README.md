@@ -2,7 +2,7 @@
 
 A repository for a few of my recent sample coding practice tasks
 
-It currently includes 5 of my practice tasks:
+It currently includes 6 of my practice tasks:
 
 ---------------------------
 1) Fluid WebPage (ClipMine)
