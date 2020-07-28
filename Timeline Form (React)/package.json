@@ -1,0 +1,38 @@
+{
+  "name": "timeline_form",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server"
+  },
+  "author": "AhsanAkhtar",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
+    "@babel/runtime": "^7.6.3",
+    "cors": "^2.8.5",
+    "file-loader": "^6.0.0",
+    "react": "^16.10.2",
+    "react-dom": "^16.10.2",
+    "react-event-timeline": "^1.6.3",
+    "react-router-dom": "^5.1.2",
+    "react-toasts": "^3.0.6",
+    "url-loader": "^4.1.0",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.9",
+    "webpack-dev-server": "^3.8.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.6.4",
+    "@babel/plugin-transform-runtime": "^7.6.2",
+    "@babel/preset-env": "^7.6.3",
+    "@babel/preset-react": "^7.6.3",
+    "@material-ui/core": "^4.5.1",
+    "@material-ui/icons": "^4.5.1",
+    "babel-loader": "^8.0.6",
+    "babel-plugin-jsx-control-statements": "^4.0.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "react-hot-loader": "^4.12.15"
+  }
+}
