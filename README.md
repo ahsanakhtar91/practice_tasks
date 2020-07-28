@@ -2,7 +2,7 @@
 
 A repository for a few of my recent sample coding practice tasks
 
-It currently includes 6 of my practice tasks:
+It currently includes 7 of my practice tasks:
 
 ---------------------------
 1) Fluid WebPage (ClipMine)
@@ -87,3 +87,18 @@ Steps to run the Registration Form:
 - Run command <code>yarn install</code> OR <code>npm install</code> on the root directory of Registration Form App to install the node packages.
 - Run the App by running the command <code>yarn start</code> OR <code>npm start</code> on the root directory.
 - Access the app in your browser with: <code>http://localhost:8080</code>
+
+----------------------------
+7) Timeline Form (React)
+----------------------------
+
+A sample Timeline Form implemented in React using React Hooks, MaterialUI, React Router, Babel, Webpack, etc. Core functionalities of this App:
+- Routing to a Timeline Form
+- Rendering a sample vertical Timeline Form with various multiline fields having a vertical line and circles alongside (on the left).
+- When the focus is moved to next field on timeline, it reflects changes on the UI (by tick marking the previous timeline field and highlighting the next one).
+- Submitting the form and showing a toast about it.
+
+Steps to run the Timeline Form:
+- Run command <code>yarn install</code> OR <code>npm install</code> on the root directory of Timeline Form App to install the node packages.
+- Run the App by running the command <code>yarn start</code> OR <code>npm start</code> on the root directory.
+- Access the app in your browser with: <code>http://localhost:3000</code>
