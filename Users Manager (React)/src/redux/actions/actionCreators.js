@@ -7,6 +7,15 @@ export const viewAllUsers = () => {
     }
 };
 
+export const viewSearchedUser = (searchText) => {
+    return {
+        type: ActionTypes.VIEW_SEARCHED_USER,
+        payload: {
+            searchText
+        }
+    }
+};
+
 export const addUser = (name, quantity) => {
     return {
         type: ActionTypes.ADD_USER,
@@ -21,7 +30,7 @@ export const deleteUser = (userID) => {
     return {
         type: ActionTypes.DELETE_USER,
         payload: {
-            index
+            userID
         }
     }
 };

@@ -38,8 +38,8 @@ body {
                     }
 
                     &:focus {
-                        -webkit-box-shadow: 0 0 0 1.30px $main-color !important;
-                        box-shadow: 0 0 0 1.30px $main-color !important;
+                        -webkit-box-shadow: 0 0 0 1.3px $main-color !important;
+                        box-shadow: 0 0 0 1.3px $main-color !important;
                     }
                 }
 
@@ -87,25 +87,30 @@ body {
         }
 
         .users-table {
-            .ant-table-thead {
-                background-color: #ccc;
+            table {
+                text-align: center;
 
-                th {
-                    background-color: inherit;
-                }
-            }
+                .ant-table-thead {
+                    background-color: #ccc;
 
-            .ant-table-tbody {
-                .edit-button {
-                    color: $blue-color;
-                    margin-right: 6.5px;
-                    text-decoration: underline;
+                    th {
+                        background-color: inherit;
+                        text-align: center;
+                    }
                 }
 
-                .delete-button {
-                    color: $red-color;
-                    cursor: pointer;
-                    text-decoration: underline;
+                .ant-table-tbody {
+                    .edit-button {
+                        color: $blue-color;
+                        margin-right: 6.5px;
+                        text-decoration: underline;
+                    }
+
+                    .delete-button {
+                        color: $red-color;
+                        cursor: pointer;
+                        text-decoration: underline;
+                    }
                 }
             }
         }

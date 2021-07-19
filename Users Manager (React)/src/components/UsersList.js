@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { viewAllUsers, deleteUser } from "../redux/actions/actionCreators";
 import { Table } from "antd";
 import { connect } from 'react-redux';
+import { sortAscending } from "../common/utils";
 
 function UsersList(props) {
     const { dispatch } = props;
@@ -11,26 +12,29 @@ function UsersList(props) {
         dispatch(viewAllUsers());
     }, []);
 
-    const onDeleteUser = (userID) => {
-        dispatch(deleteUser(userID));
+    const onDeleteUser = (userID, userName) => {
+        if (confirm(`Pressing "OK" will delete the user "${userName}". Are you sure?`)) {
+            dispatch(deleteUser(userID));
+        }
     }
 
     const columns = [
         {
             title: "Name",
             dataIndex: "name",
-            // render: (name) => <Link to={"/edit-user/" + name}>{name}</Link>
+            // render: (name, user) => <Link to={"/edit-user/" + user.id}>{name}</Link>
         },
         {
             title: "Email",
-            dataIndex: "email"
+            dataIndex: "email",
+            // render: (email, user) => <Link to={"/edit-user/" + user.id}>{email}</Link>
         },
         {
             title: "Actions",
             render: (user) => (
                 <>
                     <Link className="edit-button click-impression" to={"/edit-user/" + user.id}>{"Edit"}</Link>
-                    <span className="delete-button click-impression" onClick={() => onDeleteUser(user.id)}>{"Delete"}</span>
+                    <span className="delete-button click-impression" onClick={() => onDeleteUser(user.id, user.name)}>{"Delete"}</span>
                 </>
             )
         }
@@ -41,8 +45,14 @@ function UsersList(props) {
             className="users-table"
             rowKey={"id"}
             columns={columns}
-            dataSource={props.users}
+            dataSource={
+                sortAscending(
+                    (props?.users ?? []),
+                    (props?.orderByKey)
+                ).filter((user) => user.name.match(new RegExp(props.searchText, "i"))?.length > 0)
+            }
             pagination={{
+                style: { marginRight: 18 },
                 pageSize: 5,
                 position: "bottom",
                 showTotal: (total, range) => (
@@ -62,7 +72,8 @@ function UsersList(props) {
 
 const mapStateToProps = (state, ownProps) => {
     return {
-        users: state.users
+        users: state.users,
+        searchText: state.searchText
     };
 }
 

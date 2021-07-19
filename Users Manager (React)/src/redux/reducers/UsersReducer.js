@@ -1,47 +1,49 @@
 import ActionTypes from "../actions/actionTypes";
-import usersMockData from "../../json/usersMockData.json";
+import { getUsersDataFromLocalStorage, setUsersDataIntoLocalStorage } from "../../common/utils";
 
 const initState = {
-    users: []
+    users: [],
+    searchText: ""
 };
 
 export const UsersReducer = (state = initState, action) => {
     switch (action.type) {
 
         case ActionTypes.VIEW_ALL_USERS:
-
-            let usersToView = [];
-            if (!localStorage.getItem("usersInLocStorage")) {
-                usersToView = usersMockData;
-                localStorage.setItem("usersInLocStorage", JSON.stringify(usersToView));
-            }
-            else {
-                usersToView = JSON.parse(localStorage.getItem("usersInLocStorage"))
-            }
-
+            var users = getUsersDataFromLocalStorage(state);
             return {
-                users: [
-                    ...usersToView
-                ]
-            }
+                ...state,
+                users: [...users],
+                searchText: ""
+            };
 
-        case ActionTypes.ADD_ITEM:
+        case ActionTypes.VIEW_SEARCHED_USER:
+            var users = getUsersDataFromLocalStorage(state);
             return {
-                users: [
-                    ...state.users,
-                    {
-                        name: action.payload.name,
-                        quantity: action.payload.quantity
-                    }
-                ]
-            }
+                ...state,
+                users: [...users],
+                searchText: action.payload.searchText
+            };
 
-        case ActionTypes.DELETE_ITEM:
-            let newUsersArray = [...state.users];
-            newUsersArray.splice(action.payload.index, 1);
+        // case ActionTypes.ADD_USER:
+        //     return {
+        //         users: [
+        //             ...state.users,
+        //             {
+        //                 name: action.payload.name,
+        //                 quantity: action.payload.quantity
+        //             }
+        //         ]
+        //     };
+
+        case ActionTypes.DELETE_USER:
+            var users = getUsersDataFromLocalStorage(state);
+            users = users.filter((user) => user.id !== action.payload.userID);
+            setUsersDataIntoLocalStorage(users);
             return {
-                items: newUsersArray
-            }
+                ...state,
+                users: [...users]
+            };
 
         default:
             return state;

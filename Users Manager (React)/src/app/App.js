@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import AppHeader from "../components/AppHeader";
 import UsersList from "../components/UsersList";
 import UserDetailsForm from "../components/UserDetailsForm";
@@ -14,8 +14,10 @@ export default function App() {
                 <div className="content-body">
                     <Switch>
                         <Route exact path="/">
-                            <AppHeader mode="home"/>
-                            <UsersList />
+                            <AppHeader mode="home" />
+                            <UsersList
+                                orderByKey="name"
+                            />
                         </Route>
                         <Route exact path="/add-user">
                             <AppHeader mode="add-user" />

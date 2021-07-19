@@ -6,18 +6,26 @@ import searchIcon from "../icons/search.svg";
 import recordIcon from "../icons/record.svg";
 import addUserIcon from "../icons/add-user.svg";
 import exportExcelIcon from "../icons/export-excel.svg";
+import { connect } from "react-redux";
+import { viewAllUsers, viewSearchedUser } from "../redux/actions/actionCreators";
 const { Header } = Layout;
 
-export default function AppHeader(props) {
+function AppHeader(props) {
+    const { dispatch } = props;
 
     const searchUserByText = (text) => {
-        console.log("searchUserByText");
+        if (text.trim()) {
+            dispatch(viewSearchedUser(text.trim()));
+        }
+        else{
+            dispatch(viewAllUsers());
+        }
     };
-    
+
     const searchUserByVoice = () => {
         console.log("searchUserByVoice");
     };
-    
+
     const goToAddNewUser = () => {
         console.log("goToAddNewUser")
     };
@@ -56,3 +64,8 @@ export default function AppHeader(props) {
             </Header>
     );
 }
+
+export default connect(
+    null,
+    null
+)(AppHeader);
