@@ -1,0 +1,5 @@
+export default {
+    VIEW_ALL_USERS: "VIEW_ALL_USERS",
+    ADD_USER: "ADD_USER",
+    DELETE_USER: "DELETE_USER",
+}

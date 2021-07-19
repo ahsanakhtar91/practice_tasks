@@ -1,0 +1,127 @@
+$main-color: #7359be;
+$blue-color: #1890ff;
+$red-color: #c00;
+$app-bg-color: #eeeeee;
+
+body {
+    background-color: $app-bg-color;
+    font-family: "Roboto";
+
+    #app-root {
+        vertical-align: center;
+        margin: auto;
+        width: 60%;
+    }
+
+    .ant-layout-header {
+        background: $app-bg-color;
+
+        .home-header {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+
+            .search-bar {
+                margin-top: 10px;
+                border-radius: 20px;
+                width: 55%;
+
+                input {
+                    border-radius: inherit;
+                    border: 1px solid $main-color;
+                    padding-left: 35px;
+                    padding-right: 35px;
+
+                    &:hover {
+                        -webkit-box-shadow: 0 0 0 0.75px $main-color !important;
+                        box-shadow: 0 0 0 0.75px $main-color !important;
+                    }
+
+                    &:focus {
+                        -webkit-box-shadow: 0 0 0 1.30px $main-color !important;
+                        box-shadow: 0 0 0 1.30px $main-color !important;
+                    }
+                }
+
+                .search-icon {
+                    width: 17px;
+                    height: 18px;
+                    cursor: default;
+                }
+
+                .record-icon {
+                    width: 19px;
+                    height: 18px;
+                    margin-top: -2px;
+                    cursor: pointer;
+                }
+            }
+
+            .add-user-icon {
+                width: 20px;
+                height: 20px;
+                margin-left: 25px;
+                margin-top: 18px;
+                cursor: pointer;
+            }
+
+            .export-excel-icon {
+                width: 20px;
+                height: 20px;
+                margin-left: 20px;
+                margin-top: 18px;
+                cursor: pointer;
+            }
+        }
+    }
+
+    .ant-layout-content {
+        .content-body {
+            background: #fff;
+            padding: 0px;
+            min-height: 280px;
+
+            .add-user-form {
+                padding: 24px;
+            }
+        }
+
+        .users-table {
+            .ant-table-thead {
+                background-color: #ccc;
+
+                th {
+                    background-color: inherit;
+                }
+            }
+
+            .ant-table-tbody {
+                .edit-button {
+                    color: $blue-color;
+                    margin-right: 6.5px;
+                    text-decoration: underline;
+                }
+
+                .delete-button {
+                    color: $red-color;
+                    cursor: pointer;
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+
+    .ant-layout-footer {
+        background: transparent;
+    }
+
+    .click-impression {
+        &:hover {
+            opacity: 0.7;
+        }
+
+        &:active {
+            opacity: 1;
+        }
+    }
+}
