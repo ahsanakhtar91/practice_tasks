@@ -5,7 +5,6 @@ import { addUser } from "../redux/actions/actionCreators";
 const InputGroup = Input.Group;
 
 function AddUserForm(props) {
-
     const onAddUser = () => {
         // props.addItem(this.refs.item.state.value, this.refs.quantity.inputNumberRef.state.value);
     }
@@ -39,9 +38,9 @@ function AddUserForm(props) {
     );
 }
 
-//const mapDispatchToProps = (disp, action) => {
+// const mapDispatchToProps = (disp, action) => {
 //  dispatch: disp(action);
-//}
+// }
 
 const mapDispatchToProps = {
     addUser

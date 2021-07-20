@@ -6,15 +6,13 @@ import { connect } from 'react-redux';
 import { sortAscending } from "../common/utils";
 
 function UsersList(props) {
-    const { dispatch } = props;
-
     useEffect(() => {
-        dispatch(viewAllUsers());
+        props.dispatch(viewAllUsers());
     }, []);
 
     const onDeleteUser = (userID, userName) => {
         if (confirm(`Pressing "OK" will delete the user "${userName}". Are you sure?`)) {
-            dispatch(deleteUser(userID));
+            props.dispatch(deleteUser(userID));
         }
     }
 

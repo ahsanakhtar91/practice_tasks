@@ -2,6 +2,7 @@ $main-color: #7359be;
 $blue-color: #1890ff;
 $red-color: #c00;
 $app-bg-color: #eeeeee;
+$voice-transcript-bg-color: #ffdedd;
 
 body {
     background-color: $app-bg-color;
@@ -49,11 +50,32 @@ body {
                     cursor: default;
                 }
 
-                .record-icon {
-                    width: 19px;
+                .clear-icon {
+                    width: 17px;
                     height: 18px;
-                    margin-top: -2px;
                     cursor: pointer;
+                }
+
+                .voice-searcher {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+
+                    .record-icon {
+                        width: 19px;
+                        height: 18px;
+                        margin-top: -2px;
+                        cursor: pointer;
+                    }
+
+                    .voice-transcript {
+                        background-color: $voice-transcript-bg-color;
+                        font-weight: bold;
+                        margin-right: 4px;
+                        height: 21px;
+                        border-radius: 12px;
+                        padding: 0 8px;
+                    }
                 }
             }
 
@@ -128,5 +150,9 @@ body {
         &:active {
             opacity: 1;
         }
+    }
+
+    .hidden {
+        display: none !important;
     }
 }

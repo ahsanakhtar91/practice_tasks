@@ -4,7 +4,6 @@ import AppHeader from "../components/AppHeader";
 import UsersList from "../components/UsersList";
 import UserDetailsForm from "../components/UserDetailsForm";
 import { Layout } from 'antd';
-
 const { Content, Footer } = Layout;
 
 export default function App() {
