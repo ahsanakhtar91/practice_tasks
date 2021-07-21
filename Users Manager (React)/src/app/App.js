@@ -3,13 +3,13 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import AppHeader from "../components/AppHeader";
 import UsersList from "../components/UsersList";
 import UserDetailsForm from "../components/UserDetailsForm";
+import { USER_FORM_MODES } from "../common/constants";
 import { Layout } from 'antd';
-const { Content, Footer } = Layout;
 
 export default function App() {
     return (
         <Router>
-            <Content>
+            <Layout.Content>
                 <div className="content-body">
                     <Switch>
                         <Route exact path="/">
@@ -20,17 +20,17 @@ export default function App() {
                         </Route>
                         <Route exact path="/add-user">
                             <AppHeader mode="add-user" />
-                            <UserDetailsForm mode="add-user" />
+                            <UserDetailsForm mode={USER_FORM_MODES.addUser} />
                         </Route>
-                        <Route exact path="/edit-user/:user_id">
+                        <Route exact path="/edit-user/:userID">
                             <AppHeader mode="add-user" />
-                            <UserDetailsForm mode="edit-user" />
+                            <UserDetailsForm mode={USER_FORM_MODES.editUser} />
                         </Route>
                     </Switch>
                 </div>
-            </Content>
+            </Layout.Content>
 
-            {/* <Footer style={{ textAlign: "center" }}></Footer> */}
+            {/* <Layout.Footer style={{ textAlign: "center" }}></Layout.Footer> */}
         </Router>
     );
 };

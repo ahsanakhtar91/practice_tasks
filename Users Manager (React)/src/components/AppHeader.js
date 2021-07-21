@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import searchIcon from "../icons/search.svg";
 import clearIcon from "../icons/clear.svg";
 import addUserIcon from "../icons/add-user.svg";
@@ -9,13 +9,14 @@ import { debounce } from "debounce";
 import { connect } from "react-redux";
 import { viewAllUsers, viewSearchedUser } from "../redux/actions/actionCreators";
 import VoiceSearcher from "./VoiceSearcher";
-const { Header } = Layout;
 
 function AppHeader(props) {
     const searchBarRef = useRef(null);
 
     useEffect(() => {
-        searchBarRef.current.input.value = props.searchText
+        if (searchBarRef?.current?.input) {
+            searchBarRef.current.input.value = props.searchText;
+        }
     }, [props.searchText]);
 
     const searchUserByText = (text) => {
@@ -33,7 +34,7 @@ function AppHeader(props) {
     };
 
     const goToAddNewUser = () => {
-        console.log("goToAddNewUser");
+        props.history.push("add-user");
     };
 
     const exportDataToExcel = () => {
@@ -42,7 +43,7 @@ function AppHeader(props) {
 
     return (
         (props.mode === "home") ?
-            <Header>
+            <Layout.Header>
                 <div className="home-header">
                     <Input
                         ref={searchBarRef}
@@ -50,7 +51,12 @@ function AppHeader(props) {
                         placeholder="Search by typing the name..."
                         prefix={
                             props.searchText ?
-                                <img className="clear-icon" src={clearIcon} onClick={clearSearch} />
+                                <img
+                                    className="clear-icon click-impression"
+                                    src={clearIcon}
+                                    title="Clear search"
+                                    onClick={clearSearch}
+                                />
                                 :
                                 <img className="search-icon" src={searchIcon} />
                         }
@@ -74,15 +80,15 @@ function AppHeader(props) {
                     />
                 </div>
 
-            </Header>
+            </Layout.Header>
             :
-            <Header>
+            <Layout.Header>
                 <Link to="/">
                     Home
                 </Link>
                 &nbsp; | &nbsp;
                 Add New User
-            </Header>
+            </Layout.Header>
     );
 }
 
@@ -95,4 +101,4 @@ const mapStateToProps = (state, ownProps) => {
 export default connect(
     mapStateToProps,
     null
-)(AppHeader);
+)(withRouter(AppHeader));

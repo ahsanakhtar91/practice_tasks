@@ -38,6 +38,8 @@ function UsersList(props) {
         }
     ];
 
+    console.log(props?.users);
+
     return (
         <Table
             className="users-table"

@@ -16,12 +16,20 @@ export const viewSearchedUser = (searchText) => {
     }
 };
 
-export const addUser = (name, quantity) => {
+export const addNewUser = (userData) => {
     return {
-        type: ActionTypes.ADD_USER,
+        type: ActionTypes.ADD_NEW_USER,
         payload: {
-            name,
-            quantity
+            userData
+        }
+    }
+};
+
+export const editUser = (userData) => {
+    return {
+        type: ActionTypes.EDIT_USER,
+        payload: {
+            userData
         }
     }
 };

@@ -6,7 +6,6 @@ import { Spin } from "antd";
 
 export default function VoiceSearcher(props) {
     const {
-        transcript,
         interimTranscript,
         listening,
         resetTranscript,

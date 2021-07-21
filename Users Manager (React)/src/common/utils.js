@@ -38,13 +38,55 @@ If "orderByKey" param is not be provided, then the data will be sorted based on 
 export const sortAscending = (users = [], orderByKey) => {
     return users.sort((prevUser, nextUser) => {
         return (
-            (prevUser[orderByKey ?? "id"] > nextUser[orderByKey ?? "id"]) ?
+            (prevUser[orderByKey ?? "id"].toLowerCase() > nextUser[orderByKey ?? "id"].toLowerCase()) ?
                 1
                 :
-                (prevUser[orderByKey ?? "id"] < nextUser[orderByKey ?? "id"]) ?
+                (prevUser[orderByKey ?? "id"].toLowerCase() < nextUser[orderByKey ?? "id"].toLowerCase()) ?
                     -1
                     :
                     0
         )
     });
+};
+
+export const createNewUserObj = (existingUsers = []) => ({
+    id: generateUniqueUserID(existingUsers),
+    name: "",
+    username: "",
+    email: "",
+    address: {
+        street: "",
+        suite: "",
+        city: "",
+        zipcode: "",
+        geo: {
+            lat: "",
+            lng: ""
+        }
+    },
+    phone: "",
+    website: "",
+    company: {
+        name: "",
+        catchPhrase: "",
+        bs: ""
+    }
+});
+
+const generateUniqueUserID = (existingUsers) => {
+    const maximumIDPresent = (
+        existingUsers
+            .map((user) => user.id)
+            .reduce((a, b) => a > b ? a : b)
+    );
+    return (maximumIDPresent ?? 0) + 1;
+};
+
+export const camelToTitleCase = (camelCase) => {
+    return (
+        camelCase
+            .replace(/([A-Z])/g, (match) => ` ${match}`)
+            .replace(/^./, (match) => match.toUpperCase())
+            .trim()
+    );
 };
