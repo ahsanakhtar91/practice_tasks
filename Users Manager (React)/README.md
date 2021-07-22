@@ -3,7 +3,7 @@ Users Manager (React)
 
 ---------------------
 
-Live Demo: https://users-manager-react.netlify.app
+<code>**Live Demo**: https://users-manager-react.netlify.app</code>
 
 A user friendly and easy to use web app built in **React** using **React Hooks**, **Redux**, **Ant Design**, **React Router**, Babel, Webpack, etc. Core functionalities of this App:
 - Managing (Creating, Viewing, Searching, Editing and Deleting) the users. 
@@ -20,7 +20,7 @@ A user friendly and easy to use web app built in **React** using **React Hooks**
 - **Deleting** a user.
 - **Exporting** all of the existing users to Excel format (**CSV**).
 
-Live Demo: https://users-manager-react.netlify.app
+<code>**Live Demo**: https://users-manager-react.netlify.app</code>
 
 Steps to run the Users Manager:
 - Run command <code>yarn install</code> on the root directory of Users Manager App to install the node packages.
