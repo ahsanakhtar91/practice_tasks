@@ -91,6 +91,7 @@ function UserDetailsForm(props) {
                         <Input
                             allowClear={true}
                             placeholder={camelToTitleCase(key)}
+                            title={camelToTitleCase(key)}
                             defaultValue={state.values[key]}
                             maxLength={50}
                             onChange={(event) => onValueChanged(key, event.target.value)}
@@ -101,7 +102,7 @@ function UserDetailsForm(props) {
                     </div>
                 </div>
             ))}
-            <div className="column" style={{marginTop: "25px"}}>
+            <div className="column" style={{ marginTop: "25px" }}>
                 <div className="control">
                     <Button disabled={Object.values(state.errors).join("").trim()} type="primary" style={{ width: "100%" }} onClick={onSubmit}>
                         {props.mode === NAV_MODES.addUser ? "Add New User" : "Save Changes"}
