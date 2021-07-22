@@ -1,70 +1,28 @@
-# Getting Started with Create React App
+---------------------
+Users Manager (React)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+---------------------
 
-## Available Scripts
+Live Demo: https://users-manager-react.netlify.app
 
-In the project directory, you can run:
+A user friendly and easy to use web app built in **React** using **React Hooks**, **Redux**, **Ant Design**, **React Router**, Babel, Webpack, etc. Core functionalities of this App:
+- Managing (Creating, Viewing, Searching, Editing and Deleting) the users. 
+- Storing and Maintaining the users inside **Redux Store** as well as in **localStorage** with every update (so that the user data persists even after reloading).
+- Loading **mock data** from a json file initially into **Redux Store** as well as in **localStorage**.
+- Viewing all the users **alphabetically sorted** (by their names) ordered as (A-Z).
+- **Pagination** support (5 users per page) implemented to keep the users list/table compact.
+- Searching the users **by typing** the name.
+- Searching the users **by voice** (implemented **voice search** feature).
+- **Adding** a new user.
+- **Editing** an existing user.
+- While adding or editing a user, the required data of the user in the form is: **name**, **email**, **city**, **companyName**.
+- **Form validations** properly implemented on adding/editing form.
+- **Deleting** a user.
+- **Exporting** all of the existing users to Excel format (**CSV**).
 
-### `yarn start`
+Live Demo: https://users-manager-react.netlify.app
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Steps to run the Users Manager:
+- Run command <code>yarn install</code> on the root directory of Users Manager App to install the node packages.
+- Run the App by running the command <code>yarn start</code> on the root directory.
+- Access the app in your browser with: <code>http://localhost:3000</code>
