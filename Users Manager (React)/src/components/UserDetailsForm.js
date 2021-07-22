@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Input, Button } from 'antd';
 import { connect } from "react-redux";
 import { addNewUser, editUser } from "../redux/actions/actionCreators";
-import { USER_FORM_MODES } from "../common/constants";
+import { REG_EXP_EMAIL, USER_FORM_MODES } from "../common/constants";
 import { camelToTitleCase } from "../common/utils";
 import { withRouter } from "react-router-dom";
 
@@ -44,17 +44,23 @@ function UserDetailsForm(props) {
             },
             errors: {
                 ...prevState.errors,
-                [key]: value.trim() ? "" : "Required"
+                [key]: (value.trim()) ?
+                    (key !== "email" || value.trim().match(REG_EXP_EMAIL)) ? "" : "Invalid Email Format"
+                    :
+                    "Required"
             }
         }));
     };
 
     const onSubmit = () => {
         let errorsObj = {
-            name: state.values.name.trim() ? "" : "Required",
-            email: state.values.email.trim() ? "" : "Required",
-            city: state.values.city.trim() ? "" : "Required",
-            companyName: state.values.companyName.trim() ? "" : "Required"
+            name: (state.values.name.trim()) ? "" : "Required",
+            email: (state.values.email.trim()) ?
+                (state.values.email.trim().match(REG_EXP_EMAIL)) ? "" : "Invalid Email Format"
+                :
+                "Required",
+            city: (state.values.city.trim()) ? "" : "Required",
+            companyName: (state.values.companyName.trim()) ? "" : "Required"
         };
 
         if (Object.values(errorsObj).join("").trim()) {
@@ -80,13 +86,11 @@ function UserDetailsForm(props) {
     return (
         <div className="user-details-form">
             {Object.keys(state.values).map((key, index) => (
-                <div key={index} className="row">
-                    <div className="label">
-                        <span>{camelToTitleCase(key)}:</span>
-                    </div>
+                <div key={index} className="column">
                     <div className={`control ${state.errors[key] ? "error" : ""}`}>
                         <Input
                             allowClear={true}
+                            placeholder={camelToTitleCase(key)}
                             defaultValue={state.values[key]}
                             maxLength={50}
                             onChange={(event) => onValueChanged(key, event.target.value)}
@@ -97,14 +101,12 @@ function UserDetailsForm(props) {
                     </div>
                 </div>
             ))}
-            <div className="row">
-                <div className="label"></div>
+            <div className="column" style={{marginTop: "25px"}}>
                 <div className="control">
                     <Button disabled={Object.values(state.errors).join("").trim()} type="primary" style={{ width: "100%" }} onClick={onSubmit}>
                         {props.mode === USER_FORM_MODES.addUser ? "Add New User" : "Save Changes"}
                     </Button>
                 </div>
-                <div className="error-text"></div>
             </div>
         </div>
     );

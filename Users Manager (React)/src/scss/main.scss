@@ -18,6 +18,24 @@ body {
     .ant-layout-header {
         background: $app-bg-color;
 
+        .common-header {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+
+            .home-icon-link .home-icon {
+                width: 17px;
+                height: 18px;
+                cursor: pointer;
+                margin-right: 10px;
+                margin-top: -3.5px;
+            }
+
+            .header-title h3 {
+                color: $main-color;
+            }
+        }
+
         .home-header {
             display: flex;
             flex-direction: row;
@@ -95,6 +113,9 @@ body {
                 margin-left: 20px;
                 margin-top: 18px;
                 cursor: pointer;
+                background: url("../icons/export-excel.svg") no-repeat;
+                border: 0px;
+                overflow: hidden;
             }
         }
     }
@@ -108,28 +129,23 @@ body {
             .user-details-form {
                 padding: 24px;
 
-                .row {
+                .column {
                     display: flex;
-                    flex-direction: row;
+                    flex-direction: column;
                     align-items: center;
                     justify-content: center;
-                    margin-bottom: 20px;
+                    margin-bottom: 10px;
 
-                    .label {
-                        width: 22%;
-                        text-align: right;
-                        padding-right: 20px;
-                    }
                     .control {
-                        width: 32%;
+                        width: 50%;
 
                         &.error input {
                             border: 1px solid $validation-error-color;
                         }
                     }
                     .error-text {
-                        width: 46%;
-                        padding-left: 20px;
+                        width: 50%;
+                        padding-left: 3px;
                         color: $validation-error-color;
                     }
                 }

@@ -19,11 +19,11 @@ export default function App() {
                             />
                         </Route>
                         <Route exact path="/add-user">
-                            <AppHeader mode="add-user" />
+                            <AppHeader mode={USER_FORM_MODES.addUser} />
                             <UserDetailsForm mode={USER_FORM_MODES.addUser} />
                         </Route>
                         <Route exact path="/edit-user/:userID">
-                            <AppHeader mode="add-user" />
+                            <AppHeader mode={USER_FORM_MODES.editUser} />
                             <UserDetailsForm mode={USER_FORM_MODES.editUser} />
                         </Route>
                     </Switch>

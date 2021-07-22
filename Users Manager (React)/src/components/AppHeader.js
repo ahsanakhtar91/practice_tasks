@@ -3,12 +3,14 @@ import { Link, withRouter } from "react-router-dom";
 import searchIcon from "../icons/search.svg";
 import clearIcon from "../icons/clear.svg";
 import addUserIcon from "../icons/add-user.svg";
-import exportExcelIcon from "../icons/export-excel.svg";
+import goBackIcon from "../icons/go-back.svg";
+import { USER_FORM_MODES } from "../common/constants";
 import { Layout, Input } from 'antd';
 import { debounce } from "debounce";
 import { connect } from "react-redux";
 import { viewAllUsers, viewSearchedUser } from "../redux/actions/actionCreators";
 import VoiceSearcher from "./VoiceSearcher";
+import CSVDownloader from 'react-json-to-csv';
 
 function AppHeader(props) {
     const searchBarRef = useRef(null);
@@ -35,10 +37,6 @@ function AppHeader(props) {
 
     const goToAddNewUser = () => {
         props.history.push("add-user");
-    };
-
-    const exportDataToExcel = () => {
-        console.log("exportDataToExcel");
     };
 
     return (
@@ -72,28 +70,38 @@ function AppHeader(props) {
                         title="Add New User"
                         onClick={goToAddNewUser}
                     />
-                    <img
+                    <CSVDownloader
                         className="export-excel-icon click-impression"
-                        src={exportExcelIcon}
                         title="Export Data to Excel"
-                        onClick={exportDataToExcel}
+                        data={(props?.users ?? [])}
+                        filename="users-export.csv"
                     />
                 </div>
 
             </Layout.Header>
             :
             <Layout.Header>
-                <Link to="/">
-                    Home
-                </Link>
-                &nbsp; | &nbsp;
-                Add New User
+                <div className="common-header">
+                    <div className="home-icon-link">
+                        <Link to="/">
+                            <img
+                                className="home-icon click-impression"
+                                src={goBackIcon}
+                                title="Go back"
+                            />
+                        </Link>
+                    </div>
+                    <div className="header-title">
+                        <h3>{props.mode === USER_FORM_MODES.addUser ? "Add New User" : "Edit User"}</h3>
+                    </div>
+                </div>
             </Layout.Header>
     );
 }
 
 const mapStateToProps = (state, ownProps) => {
     return {
+        users: state.users,
         searchText: state.searchText
     };
 }
