@@ -1,4 +1,5 @@
-export const USER_FORM_MODES = {
+export const NAV_MODES = {
+    home: "home",
     addUser: "addUser",
     editUser: "editUser"
 }

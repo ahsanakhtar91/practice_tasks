@@ -90,3 +90,24 @@ export const camelToTitleCase = (camelCase) => {
             .trim()
     );
 };
+
+export const flattenObject = (obj) => {
+    let toReturn = {};
+
+    for (let i in obj) {
+        if (!obj.hasOwnProperty(i)) continue;
+
+        if ((typeof obj[i]) == 'object' && obj[i] !== null) {
+            var flatObject = flattenObject(obj[i]);
+            for (var x in flatObject) {
+                if (!flatObject.hasOwnProperty(x)) continue;
+
+                toReturn[i + "_" + x] = flatObject[x];
+            }
+        }
+        else {
+            toReturn[i] = obj[i];
+        }
+    }
+    return toReturn;
+}

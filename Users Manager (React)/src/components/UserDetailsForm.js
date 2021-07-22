@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import { Input, Button } from 'antd';
 import { connect } from "react-redux";
 import { addNewUser, editUser } from "../redux/actions/actionCreators";
-import { REG_EXP_EMAIL, USER_FORM_MODES } from "../common/constants";
+import { REG_EXP_EMAIL, NAV_MODES } from "../common/constants";
 import { camelToTitleCase } from "../common/utils";
 import { withRouter } from "react-router-dom";
 
 function UserDetailsForm(props) {
-    const userID = ((props.mode === USER_FORM_MODES.editUser && props.match.params?.userID) ?
+    const userID = ((props.mode === NAV_MODES.editUser && props.match.params?.userID) ?
         parseInt(props.match.params?.userID)
         :
         null
@@ -20,10 +20,10 @@ function UserDetailsForm(props) {
 
     const initState = {
         values: {
-            name: (props.mode === USER_FORM_MODES.editUser && userObjToEdit) ? userObjToEdit.name : "",
-            email: (props.mode === USER_FORM_MODES.editUser && userObjToEdit) ? userObjToEdit.email : "",
-            city: (props.mode === USER_FORM_MODES.editUser && userObjToEdit) ? userObjToEdit.address.city : "",
-            companyName: (props.mode === USER_FORM_MODES.editUser && userObjToEdit) ? userObjToEdit.company.name : ""
+            name: (props.mode === NAV_MODES.editUser && userObjToEdit) ? userObjToEdit.name : "",
+            email: (props.mode === NAV_MODES.editUser && userObjToEdit) ? userObjToEdit.email : "",
+            city: (props.mode === NAV_MODES.editUser && userObjToEdit) ? userObjToEdit.address.city : "",
+            companyName: (props.mode === NAV_MODES.editUser && userObjToEdit) ? userObjToEdit.company.name : ""
         },
         errors: {
             name: "",
@@ -70,13 +70,13 @@ function UserDetailsForm(props) {
             }));
         }
         else {
-            if (props.mode === USER_FORM_MODES.addUser) {
+            if (props.mode === NAV_MODES.addUser) {
                 if (confirm("Are you sure you want to add a new user?")) {
                     props.dispatch(addNewUser({ ...state.values }));
                     props.history.push("");
                 }
             }
-            else if (props.mode === USER_FORM_MODES.editUser) {
+            else if (props.mode === NAV_MODES.editUser) {
                 props.dispatch(editUser({ ...state.values, id: userID }));
                 props.history.push("");
             }
@@ -104,7 +104,7 @@ function UserDetailsForm(props) {
             <div className="column" style={{marginTop: "25px"}}>
                 <div className="control">
                     <Button disabled={Object.values(state.errors).join("").trim()} type="primary" style={{ width: "100%" }} onClick={onSubmit}>
-                        {props.mode === USER_FORM_MODES.addUser ? "Add New User" : "Save Changes"}
+                        {props.mode === NAV_MODES.addUser ? "Add New User" : "Save Changes"}
                     </Button>
                 </div>
             </div>

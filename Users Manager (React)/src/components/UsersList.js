@@ -45,9 +45,11 @@ function UsersList(props) {
             columns={columns}
             dataSource={
                 sortAscending(
-                    (props?.users ?? []),
+                    (props?.users ? [...props.users] : []),
                     (props?.orderByKey)
-                ).filter((user) => user.name.replace(/\.|\s/gi, "").match(new RegExp(props.searchText.replace(/\.|\s/gi, ""), "i"))?.length > 0)
+                ).filter((user) => (
+                    user.name.replace(/\.|\s/gi, "").match(new RegExp(props.searchText.replace(/\.|\s/gi, ""), "i"))?.length > 0
+                ))
             }
             pagination={{
                 style: { marginRight: 18 },

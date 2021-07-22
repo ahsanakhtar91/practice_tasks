@@ -4,13 +4,14 @@ import searchIcon from "../icons/search.svg";
 import clearIcon from "../icons/clear.svg";
 import addUserIcon from "../icons/add-user.svg";
 import goBackIcon from "../icons/go-back.svg";
-import { USER_FORM_MODES } from "../common/constants";
+import { NAV_MODES } from "../common/constants";
 import { Layout, Input } from 'antd';
 import { debounce } from "debounce";
 import { connect } from "react-redux";
 import { viewAllUsers, viewSearchedUser } from "../redux/actions/actionCreators";
 import VoiceSearcher from "./VoiceSearcher";
 import CSVDownloader from 'react-json-to-csv';
+import { flattenObject, sortAscending } from "../common/utils";
 
 function AppHeader(props) {
     const searchBarRef = useRef(null);
@@ -40,7 +41,7 @@ function AppHeader(props) {
     };
 
     return (
-        (props.mode === "home") ?
+        (props.mode === NAV_MODES.home) ?
             <Layout.Header>
                 <div className="home-header">
                     <Input
@@ -62,7 +63,7 @@ function AppHeader(props) {
                             <VoiceSearcher dispatch={props.dispatch} />
                         }
                         size="large"
-                        onChange={debounce((event) => searchUserByText(event.target.value), 300)}
+                        onChange={debounce((event) => searchUserByText(event.target.value), 250)}
                     />
                     <img
                         className="add-user-icon click-impression"
@@ -73,8 +74,15 @@ function AppHeader(props) {
                     <CSVDownloader
                         className="export-excel-icon click-impression"
                         title="Export Data to Excel"
-                        data={(props?.users ?? [])}
-                        filename="users-export.csv"
+                        data={
+                            sortAscending(
+                                (props?.users ? [...props.users] : []),
+                                (props?.orderByKey)
+                            ).map((user) => (
+                                flattenObject(user)
+                            ))
+                        }
+                        filename={`exported_users.csv`}
                     />
                 </div>
 
@@ -92,7 +100,7 @@ function AppHeader(props) {
                         </Link>
                     </div>
                     <div className="header-title">
-                        <h3>{props.mode === USER_FORM_MODES.addUser ? "Add New User" : "Edit User"}</h3>
+                        <h3>{props.mode === NAV_MODES.addUser ? "Add New User" : "Edit User"}</h3>
                     </div>
                 </div>
             </Layout.Header>
