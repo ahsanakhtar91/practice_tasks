@@ -77,7 +77,7 @@ const generateUniqueUserID = (existingUsers) => {
     const maximumIDPresent = (
         existingUsers
             .map((user) => user.id)
-            .reduce((a, b) => a > b ? a : b)
+            .reduce(((a, b) => a > b ? a : b), 0)
     );
     return (maximumIDPresent ?? 0) + 1;
 };
