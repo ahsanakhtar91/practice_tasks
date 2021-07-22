@@ -107,7 +107,7 @@ Steps to run the Timeline Form:
 8) Users Manager (React)
 ------------------------
 
-<code>**Live Demo**: https://users-manager-react.netlify.app</code>
+<code>**Live Demo**: https://users-manager-react.netlify.app </code>
 
 A user friendly and easy to use web app built in **React** using **React Hooks**, **Redux**, **Ant Design**, **React Router**, Babel, Webpack, etc. Core functionalities of this App:
 - Managing (Creating, Viewing, Searching, Editing and Deleting) the users. 
