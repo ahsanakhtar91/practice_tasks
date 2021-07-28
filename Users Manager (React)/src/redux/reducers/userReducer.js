@@ -6,7 +6,7 @@ const initState = {
     searchText: ""
 };
 
-export const usersReducer = (state = initState, action) => {
+export const userReducer = (state = initState, action) => {
     switch (action.type) {
 
 

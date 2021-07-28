@@ -3,7 +3,7 @@ import usersMockData from "../json/usersMockData.json";
 /* 
 This function needed to be written separately that gives the full data of users as required.
 This function is separately written to avoid redundant code of accessing "localStorage" over and over again.
-If "localStorage" was never needed to be accessed, then only "users" array would have been required in the "UsersReducer" (synchronously).
+If "localStorage" was never needed to be accessed, then only "users" array would have been required in the "userReducer" (synchronously).
 P.S. if the data would have been coming from an API end-point (asynchronously), then either "Thunks" OR "Sagas" should be written as an alternative to this.
 */
 export const getUsersDataFromLocalStorage = (storeState) => {
