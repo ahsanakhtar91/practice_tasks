@@ -1,0 +1,305 @@
+$main-color: #2ccf3f;
+$edit-btn-color: #1890ff;
+$delete-btn-color: #c00;
+$validation-error-color: #f00;
+$app-bg-color: #ffffff;
+$voice-transcript-bg-color: #ffdedd;
+$border-color: #cccccc;
+
+body {
+    background-color: $app-bg-color;
+    font-family: "Roboto";
+
+    #app-root {
+        vertical-align: center;
+        margin: auto;
+        width: 100%;
+    }
+
+    .ant-layout-sider {
+        border-right: 0.5px solid $border-color;
+    }
+
+    .side-menu-content {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+
+        .side-menu-content-item {
+            display: flex;
+            flex-direction: column;
+            margin-right: 28px;
+            margin-bottom: 18px;
+
+            .vap-icon {
+                width: unset;
+                height: 55px;
+                border-radius: 5px;
+            }
+        }
+    }
+
+    .top-header.ant-layout-header {
+        background: $app-bg-color;
+        height: 60px;
+        padding: 0 40px;
+        border-bottom: 1px solid $border-color;
+
+        .app-header {
+            padding-top: 20px;
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+
+            .app-logo {
+                width: unset;
+            }
+
+            div.left-sec {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-evenly;
+
+                .top-label {
+                    margin-top: -22px;
+                    margin-left: 14px;
+                    font-size: 15px;
+                    font-weight: bold;
+                }
+            }
+
+            div.right-sec {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-evenly;
+                margin-top: -2px;
+
+                .bell-icon {
+                    margin-top: 1px;
+                    width: 21px;
+                    height: 22px;
+                }
+
+                .label {
+                    margin: -19px 11px 0px 14px;
+                }
+
+                .user-icon {
+                    width: 26px;
+                    height: 25px;
+                }
+            }
+        }
+    }
+
+    .ant-layout-header {
+        height: 90px;
+        padding: 10 50px;
+        background: $app-bg-color;
+
+        .content-header {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+
+            .home-icon-link .home-icon {
+                width: 17px;
+                height: 18px;
+                cursor: pointer;
+                margin-right: 10px;
+                margin-top: -3.5px;
+            }
+
+            .header-title h3 {
+                color: $main-color;
+            }
+
+            .search-bar {
+                margin-top: 25px;
+                border-radius: 20px;
+                width: 55%;
+
+                input {
+                    padding-left: 35px;
+                    padding-right: 35px;
+                }
+
+                .search-icon {
+                    width: 17px;
+                    height: 18px;
+                    cursor: default;
+                }
+
+                .clear-icon {
+                    width: 17px;
+                    height: 18px;
+                    cursor: pointer;
+                }
+
+                .voice-searcher {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+
+                    .record-icon {
+                        width: 19px;
+                        height: 18px;
+                        margin-top: -2px;
+                        cursor: pointer;
+                    }
+
+                    .voice-transcript {
+                        background-color: $voice-transcript-bg-color;
+                        font-weight: bold;
+                        margin-right: 4px;
+                        height: 21px;
+                        border-radius: 12px;
+                        padding: 0 8px;
+                        cursor: pointer;
+                    }
+                }
+            }
+
+            .add-client-button {
+                height: 40px;
+                margin-left: 25px;
+                cursor: pointer;
+                display: flex;
+                flex-direction: row;
+                margin-top: 24px;
+                padding-top: 5px;
+                border-radius: 10px;
+                background-color: $main-color;
+                border-color: $main-color;
+
+                div {
+                    margin-top: 4px;
+                }
+
+                .add-client-icon {
+                    width: 18px;
+                    height: 15px;
+                    margin-left: 18px;
+                    margin-top: 6px;
+                }
+            }
+        }
+    }
+
+    .ant-layout-content {
+        .content-body {
+            background: #fff;
+            padding: 0px;
+            min-height: 280px;
+
+            .user-details-form {
+                padding: 24px;
+
+                .column {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    margin-bottom: 10px;
+
+                    .control {
+                        width: 50%;
+
+                        &.error input {
+                            border: 1px solid $validation-error-color;
+                        }
+                    }
+                    .error-text {
+                        width: 50%;
+                        padding-left: 3px;
+                        color: $validation-error-color;
+                    }
+                }
+            }
+        }
+
+        .clients-table {
+            table {
+                text-align: center;
+
+                .ant-table-thead {
+                    background-color: #f2f5f7;
+
+                    th {
+                        background-color: inherit;
+                        text-align: center;
+                        font-weight: bold;
+                    }
+                }
+
+                .ant-table-tbody {
+                    .edit-button {
+                        color: $edit-btn-color;
+                        margin-right: 6.5px;
+                        text-decoration: underline;
+                    }
+
+                    .delete-button {
+                        color: $delete-btn-color;
+                        cursor: pointer;
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
+
+    .ant-menu-item.ant-menu-item-selected {
+        background-color: #e9f9f0 !important;
+        color: $main-color !important;
+        font-weight: bold;
+        margin-left: -1px;
+    }
+
+    .ant-menu-item.ant-menu-item-selected::before {
+        content: "";
+        transform: scaleY(1);
+        opacity: 1;
+        border-left: 3px solid $main-color;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        position: absolute;
+        left: 4px;
+    }
+
+    .ant-menu-item.ant-menu-item-selected::after {
+        display: none;
+    }
+
+    .ant-layout-footer {
+        background: transparent;
+    }
+
+    .vap-icon {
+        width: 17px;
+        height: 18px;
+        cursor: pointer;
+    }
+
+    .click-impression {
+        &:hover {
+            opacity: 0.7;
+        }
+
+        &:active {
+            opacity: 1;
+        }
+    }
+
+    .label {
+        text-align: center;
+        font-weight: bold;
+        font-size: 13px;
+    }
+
+    .hidden {
+        display: none !important;
+    }
+}

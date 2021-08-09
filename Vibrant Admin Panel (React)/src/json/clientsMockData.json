@@ -1,0 +1,146 @@
+[
+    {
+        "id": 2543,
+        "client": {
+            "clientName": "Alexander John",
+            "email": "alex@john.com",
+            "phone": "1234567890",
+            "startDate": "Nov 11, 2020",
+            "subscriptionStatus": "Active"
+        },
+        "business": {
+            "businessType": "Online Business",
+            "legalName": "The Corner Store (Pvt) Ltd",
+            "licenseNumber": "12345",
+            "taxNumber": "12345678",
+            "licenseDoc": null,
+            "noOfBranches": "3"
+        },
+        "branch": {
+            "storeName": "The Corner Store",
+            "address": "Victor Plains, Wisokyburgh",
+            "email": "corner@store.biz",
+            "phone": "1234567890"
+        }
+    },
+    {
+        "id": 9876,
+        "client": {
+            "clientName": "Jim Maxwell",
+            "email": "jim@max.com",
+            "phone": "1233565890",
+            "startDate": "Nov 09, 2021",
+            "subscriptionStatus": "Inactive"
+        },
+        "business": {
+            "noOfBranches": "2",
+            "businessType": "Shop",
+            "legalName": "Sweet Spot (Pvt) Ltd",
+            "licenseNumber": "12045",
+            "taxNumber": "13365678",
+            "licenseDoc": null
+        },
+        "branch": {
+            "storeName": "Sweet Spot",
+            "address": "Lancashire Street, UK",
+            "email": "sweet@spot.co",
+            "phone": "1233565890"
+        }
+    },
+    {
+        "id": 5643,
+        "client": {
+            "clientName": "Alan Lamb",
+            "email": "alan@gmail.com",
+            "phone": "1233905890",
+            "startDate": "Nov 01, 2019",
+            "subscriptionStatus": "Active"
+        },
+        "business": {
+            "businessType": "Sweet Cart",
+            "legalName": "The Full Cart (Pvt) Ltd",
+            "licenseNumber": "12045",
+            "taxNumber": "13365678",
+            "licenseDoc": null,
+            "noOfBranches": "4"
+        },
+        "branch": {
+            "storeName": "The Full Cart",
+            "address": "Ghouri Town, Islamabad",
+            "email": "full@cart.com",
+            "phone": "1233905890"
+        }
+    },
+    {
+        "id": 4563,
+        "client": {
+            "clientName": "Carlos Ming",
+            "email": "carlos@yahoo.com",
+            "phone": "1211115890",
+            "startDate": "Aug 01, 2021",
+            "subscriptionStatus": "Active"
+        },
+        "business": {
+            "businessType": "Online Store",
+            "legalName": "The Mega Store (Pvt) Ltd",
+            "licenseNumber": "10645",
+            "taxNumber": "13365278",
+            "licenseDoc": null,
+            "noOfBranches": "1"
+        },
+        "branch": {
+            "storeName": "The Mega Store",
+            "address": "11th Steet, Riyadh",
+            "email": "the@mega.co",
+            "phone": "1211115890"
+        }
+    },
+    {
+        "id": 9841,
+        "client": {
+            "clientName": "Vikram Dev",
+            "email": "viki.dev@yahoo.com",
+            "phone": "1230005890",
+            "startDate": "Apr 22, 2019",
+            "subscriptionStatus": "Active"
+        },
+        "business": {
+            "businessType": "Cart",
+            "legalName": "Fun KnickKnacks (Pvt) Ltd",
+            "licenseNumber": "15045",
+            "taxNumber": "13365378",
+            "licenseDoc": null,
+            "noOfBranches": "5"
+        },
+        "branch": {
+            "storeName": "Fun KnickKnacks",
+            "address": "G-9/4, TF Complex, Islamabad",
+            "email": "fun@knickknacks.co",
+            "phone": "1230005890"
+        }
+    },
+    {
+        "id": 4101,
+        "client": {
+            "clientName": "Iqbal Bhatti",
+            "email": "iqbal@hotmail.com",
+            "phone": "2331135890",
+            "startDate": "Nov 05, 2019",
+            "subscriptionStatus": "Active"
+        },
+        "business": {
+            "businessType": "Homemade",
+            "legalName": "Mushroom Masala (Pvt) Ltd",
+            "licenseNumber": "11045",
+            "taxNumber": "13365078",
+            "licenseDoc": null,
+            "noOfBranches": "3"
+        },
+        "branch": {
+            "storeName": "Mushroom Masala",
+            "address": "14th Steet, USA",
+            "email": "mushrooms.perfect@gmail.com",
+            "phone": "2331135890"
+        }
+    }
+]
