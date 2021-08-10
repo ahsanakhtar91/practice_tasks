@@ -1,5 +1,5 @@
 {
-    "name": "vibrant_admin_panel",
+    "name": "admin_panel_app",
     "version": "0.1.0",
     "private": true,
     "dependencies": {
