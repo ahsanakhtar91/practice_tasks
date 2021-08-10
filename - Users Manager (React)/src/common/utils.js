@@ -110,4 +110,4 @@ export const flattenObject = (obj) => {
         }
     }
     return toReturn;
-}
+};

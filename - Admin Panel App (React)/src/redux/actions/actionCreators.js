@@ -1,44 +1,44 @@
 import ActionTypes from "./actionTypes";
 
-export const viewAllUsers = () => {
+export const viewAllClients = () => {
     return {
-        type: ActionTypes.VIEW_ALL_USERS,
+        type: ActionTypes.VIEW_ALL_CLIENTS,
         payload: {}
     }
 };
 
-export const viewSearchedUser = (searchText) => {
+export const viewSearchedClient = (searchText) => {
     return {
-        type: ActionTypes.VIEW_SEARCHED_USER,
+        type: ActionTypes.VIEW_SEARCHED_CLIENT,
         payload: {
             searchText
         }
     }
 };
 
-export const addNewUser = (userData) => {
+export const addNewClient = (clientData) => {
     return {
-        type: ActionTypes.ADD_NEW_USER,
+        type: ActionTypes.ADD_NEW_CLIENT,
         payload: {
-            userData
+            clientData
         }
     }
 };
 
-export const editClient = (userData) => {
+export const editClient = (clientData) => {
     return {
-        type: ActionTypes.EDIT_USER,
+        type: ActionTypes.EDIT_CLIENT,
         payload: {
-            userData
+            clientData
         }
     }
 };
 
-export const deleteUser = (userID) => {
+export const deleteClient = (clientID) => {
     return {
-        type: ActionTypes.DELETE_USER,
+        type: ActionTypes.DELETE_CLIENT,
         payload: {
-            userID
+            clientID
         }
     }
 };

@@ -1,20 +1,21 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { viewAllUsers, deleteUser } from "../redux/actions/actionCreators";
-import { Table } from "antd";
+import { viewAllClients, deleteClient } from "../redux/actions/actionCreators";
+import { Dropdown, Menu, Table } from "antd";
 import { connect } from 'react-redux';
 import { sortAscending } from "../common/utils";
+import threeDotsIcon from "../icons/three-dots-icon.svg";
 
 function ClientsList(props) {
     useEffect(() => {
-        props.dispatch(viewAllUsers());
+        props.dispatch(viewAllClients());
     }, []);
 
-    const onDeleteUser = (userID, userName) => {
-        if (confirm(`Pressing "OK" will delete the client "${userName}". Are you sure?`)) {
-            props.dispatch(deleteUser(userID));
+    const onDeleteClient = (clientID, storeName) => {
+        if (confirm(`Pressing "OK" will delete the client with Store Name: "${storeName}". Are you sure?`)) {
+            props.dispatch(deleteClient(clientID));
         }
-    }
+    };
 
     const columns = [
         {
@@ -42,11 +43,29 @@ function ClientsList(props) {
             render: (client) => <span>{client.client.subscriptionStatus}</span>
         },
         {
-            title: "Actions",
-            render: (user) => (
+            title: "",
+            render: (client) => (
                 <>
-                    <Link className="edit-button click-impression" to={"/edit-client/" + user.id}>{"Edit"}</Link>
-                    <span className="delete-button click-impression" onClick={() => onDeleteUser(user.id, user.name)}>{"Delete"}</span>
+                    <Dropdown trigger={['click']} placement={"bottomLeft"} overlay={(
+                        <Menu style={{ width: "90px" }}>
+                            <Menu.Item key="1">
+                                <Link className="edit-button click-impression" style={{ width: "90px" }} to={"/view-client/" + client.id}>{"View"}</Link>
+                            </Menu.Item>
+                            <Menu.Item key="2">
+                                <Link className="edit-button click-impression" style={{ width: "90px" }} to={"/edit-client/" + client.id}>{"Edit"}</Link>
+                            </Menu.Item>
+                            <Menu.Item key="3" style={{ color: "#c00" }}>
+                                <div className="delete-button click-impression" style={{ width: "90px" }} onClick={() => onDeleteClient(client.id, client.branch.storeName)}>{"Delete"}</div>
+                            </Menu.Item>
+                        </Menu>
+                    )}>
+                        <a className="ant-dropdown-link" onClick={(event) => event.preventDefault()}>
+                            <img
+                                className="vap-icon admin-avatar click-impression"
+                                src={threeDotsIcon}
+                            />
+                        </a>
+                    </Dropdown>
                 </>
             )
         }
@@ -59,10 +78,10 @@ function ClientsList(props) {
             columns={columns}
             dataSource={
                 sortAscending(
-                    (props?.users ? [...props.users] : []),
+                    (props?.clients ? [...props.clients] : []),
                     (props?.orderByKey)
-                ).filter((user) => (
-                    user.branch.storeName.replace(/\.|\s/gi, "").match(new RegExp(props.searchText.replace(/\.|\s/gi, ""), "i"))?.length > 0
+                ).filter((client) => (
+                    client.branch.storeName.replace(/\.|\s/gi, "").match(new RegExp(props.searchText.replace(/\.|\s/gi, ""), "i"))?.length > 0
                 ))
             }
             pagination={{
@@ -75,7 +94,7 @@ function ClientsList(props) {
                         <span style={{ fontWeight: "bold" }}>{`${range[0]}-${range[1]}`}</span>
                         <span>{" of total "}</span>
                         <span style={{ fontWeight: "bold" }}>{total}</span>
-                        <span>{" users"}</span>
+                        <span>{" clients"}</span>
                     </span>
                 )
             }}
@@ -86,7 +105,7 @@ function ClientsList(props) {
 
 const mapStateToProps = (state, ownProps) => {
     return {
-        users: state.users,
+        clients: state.clients,
         searchText: state.searchText
     };
 }

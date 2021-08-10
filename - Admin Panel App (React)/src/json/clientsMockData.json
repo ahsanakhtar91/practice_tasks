@@ -5,7 +5,7 @@
             "clientName": "Alexander John",
             "email": "alex@john.com",
             "phone": "1234567890",
-            "startDate": "Nov 11, 2020",
+            "startDate": "02/23/2020",
             "subscriptionStatus": "Active"
         },
         "business": {
@@ -13,7 +13,7 @@
             "legalName": "The Corner Store (Pvt) Ltd",
             "licenseNumber": "12345",
             "taxNumber": "12345678",
-            "licenseDoc": null,
+            "licenseDoc": "",
             "noOfBranches": "3"
         },
         "branch": {
@@ -29,7 +29,7 @@
             "clientName": "Jim Maxwell",
             "email": "jim@max.com",
             "phone": "1233565890",
-            "startDate": "Nov 09, 2021",
+            "startDate": "03/25/2021",
             "subscriptionStatus": "Inactive"
         },
         "business": {
@@ -38,7 +38,7 @@
             "legalName": "Sweet Spot (Pvt) Ltd",
             "licenseNumber": "12045",
             "taxNumber": "13365678",
-            "licenseDoc": null
+            "licenseDoc": ""
         },
         "branch": {
             "storeName": "Sweet Spot",
@@ -53,7 +53,7 @@
             "clientName": "Alan Lamb",
             "email": "alan@gmail.com",
             "phone": "1233905890",
-            "startDate": "Nov 01, 2019",
+            "startDate": "01/11/2019",
             "subscriptionStatus": "Active"
         },
         "business": {
@@ -61,7 +61,7 @@
             "legalName": "The Full Cart (Pvt) Ltd",
             "licenseNumber": "12045",
             "taxNumber": "13365678",
-            "licenseDoc": null,
+            "licenseDoc": "",
             "noOfBranches": "4"
         },
         "branch": {
@@ -77,7 +77,7 @@
             "clientName": "Carlos Ming",
             "email": "carlos@yahoo.com",
             "phone": "1211115890",
-            "startDate": "Aug 01, 2021",
+            "startDate": "06/20/2021",
             "subscriptionStatus": "Active"
         },
         "business": {
@@ -85,7 +85,7 @@
             "legalName": "The Mega Store (Pvt) Ltd",
             "licenseNumber": "10645",
             "taxNumber": "13365278",
-            "licenseDoc": null,
+            "licenseDoc": "",
             "noOfBranches": "1"
         },
         "branch": {
@@ -101,7 +101,7 @@
             "clientName": "Vikram Dev",
             "email": "viki.dev@yahoo.com",
             "phone": "1230005890",
-            "startDate": "Apr 22, 2019",
+            "startDate": "04/22/2019",
             "subscriptionStatus": "Active"
         },
         "business": {
@@ -109,7 +109,7 @@
             "legalName": "Fun KnickKnacks (Pvt) Ltd",
             "licenseNumber": "15045",
             "taxNumber": "13365378",
-            "licenseDoc": null,
+            "licenseDoc": "",
             "noOfBranches": "5"
         },
         "branch": {
@@ -125,15 +125,15 @@
             "clientName": "Iqbal Bhatti",
             "email": "iqbal@hotmail.com",
             "phone": "2331135890",
-            "startDate": "Nov 05, 2019",
-            "subscriptionStatus": "Active"
+            "startDate": "11/05/2019",
+            "subscriptionStatus": "Inactive"
         },
         "business": {
             "businessType": "Homemade",
             "legalName": "Mushroom Masala (Pvt) Ltd",
             "licenseNumber": "11045",
             "taxNumber": "13365078",
-            "licenseDoc": null,
+            "licenseDoc": "",
             "noOfBranches": "3"
         },
         "branch": {

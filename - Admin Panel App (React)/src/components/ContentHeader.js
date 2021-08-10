@@ -8,8 +8,10 @@ import { NAV_MODES } from "../common/constants";
 import { Layout, Input, Button } from 'antd';
 import { debounce } from "debounce";
 import { connect } from "react-redux";
-import { viewAllUsers, viewSearchedUser } from "../redux/actions/actionCreators";
+import { viewAllClients, viewSearchedClient } from "../redux/actions/actionCreators";
 import VoiceSearcher from "./VoiceSearcher";
+import CSVDownloader from 'react-json-to-csv';
+import { flattenObject, sortAscending } from "../common/utils";
 
 function ContentHeader(props) {
     const searchBarRef = useRef(null);
@@ -20,21 +22,21 @@ function ContentHeader(props) {
         }
     }, [props.searchText]);
 
-    const searchUserByText = (text) => {
+    const searchClientByText = (text) => {
         if (text.trim()) {
-            props.dispatch(viewSearchedUser(text.trim()));
+            props.dispatch(viewSearchedClient(text.trim()));
         }
         else {
-            props.dispatch(viewAllUsers());
+            props.dispatch(viewAllClients());
         }
     };
 
     const clearSearch = () => {
         searchBarRef.current.input.value = "";
-        props.dispatch(viewAllUsers());
+        props.dispatch(viewAllClients());
     };
 
-    const goToAddNewUser = () => {
+    const goToAddNewClient = () => {
         props.history.push("add-client");
     };
 
@@ -61,15 +63,33 @@ function ContentHeader(props) {
                             <VoiceSearcher dispatch={props.dispatch} />
                         }
                         size="large"
-                        onChange={debounce((event) => searchUserByText(event.target.value), 250)}
+                        onChange={debounce((event) => searchClientByText(event.target.value), 250)}
                     />
-                    <Button type="primary" size="medium" className="add-client-button click-impression" onClick={goToAddNewUser}>
-                        <div>Add Clients</div>
-                        <img
-                            className="add-client-icon"
-                            src={addClientIcon}
-                        />
-                    </Button>
+                    <div style={{ display: "flex", flexDirection: "row" }}>
+                        <div className="export-excel-div">
+                            <span>Export as CSV:</span>
+                            <CSVDownloader
+                                className="export-excel-icon click-impression"
+                                title="Export all clients data to Excel"
+                                data={
+                                    sortAscending(
+                                        (props?.clients ? [...props.clients] : []),
+                                        (props?.orderByKey)
+                                    ).map((client) => (
+                                        flattenObject(client)
+                                    ))
+                                }
+                                filename={`exported_clients.csv`}
+                            />
+                        </div>
+                        <Button type="primary" className="add-client-button click-impression" onClick={goToAddNewClient}>
+                            <div>Add Clients</div>
+                            <img
+                                className="add-client-icon"
+                                src={addClientIcon}
+                            />
+                        </Button>
+                    </div>
                 </div>
 
             </Layout.Header>
@@ -86,7 +106,7 @@ function ContentHeader(props) {
                         </Link>
                     </div>
                     <div className="header-title">
-                        <h3>{props.mode === NAV_MODES.addClient ? "Add New User" : "Edit User"}</h3>
+                        <h3>{props.mode === NAV_MODES.addClient ? "Add New Client" : "Edit Client"}</h3>
                     </div>
                 </div>
             </Layout.Header>
@@ -95,7 +115,7 @@ function ContentHeader(props) {
 
 const mapStateToProps = (state, ownProps) => {
     return {
-        users: state.users,
+        clients: state.clients,
         searchText: state.searchText
     };
 }

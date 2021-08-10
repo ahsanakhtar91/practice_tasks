@@ -7,18 +7,18 @@ If "localStorage" was never needed to be accessed, then only "clients" array wou
 P.S. if the data would have been coming from an API end-point (asynchronously), then either "Thunks" OR "Sagas" should be written as an alternative to this.
 */
 export const getClientsDataFromLocalStorage = (storeState) => {
-    let allUsers = [];
-    if (storeState?.users?.length > 0) {
-        allUsers = storeState.users;
+    let allClients = [];
+    if (storeState?.clients?.length > 0) {
+        allClients = storeState.clients;
     }
     else if (!localStorage.getItem("clientsInLocStorage")) {
-        allUsers = clientsMockData;
-        localStorage.setItem("clientsInLocStorage", JSON.stringify(allUsers));
+        allClients = clientsMockData;
+        localStorage.setItem("clientsInLocStorage", JSON.stringify(allClients));
     }
     else {
-        allUsers = JSON.parse(localStorage.getItem("clientsInLocStorage"));
+        allClients = JSON.parse(localStorage.getItem("clientsInLocStorage"));
     }
-    return allUsers;
+    return allClients;
 };
 
 /* 
@@ -27,21 +27,21 @@ This function is separately written to avoid redundant code of writing "localSto
 If "localStorage" was never needed to be accessed, then only an API endpoint would have been called.
 P.S. if the data would have been sent to an API end-point (asynchronously), then either "Thunks" OR "Sagas" should be written as an alternative to this.
 */
-export const setClientsDataIntoLocalStorage = (updatedUsers) => {
-    localStorage.setItem("clientsInLocStorage", JSON.stringify(updatedUsers));
+export const setClientsDataIntoLocalStorage = (updatedClients) => {
+    localStorage.setItem("clientsInLocStorage", JSON.stringify(updatedClients));
 };
 
 /*
-This is a helper function to sort the clients data in Ascending Order before rendering, by using the "orderByKey" in the params (currently, the value it recieves is "storeName")
-If "orderByKey" param is not be provided, then the data will be sorted based on the key "id" (means in the order they were created)
+This is a helper function to sort the clients data in Ascending Order before rendering, by using the "orderByKey" in the params (currently, the value it recieves is "id")
+If "orderByKey" param is not be provided, then the data will be sorted based on the default key "id" (means in the order they were created, by default)
 */
-export const sortAscending = (users = [], orderByKey) => {
-    return users.sort((prevUser, nextClient) => {
+export const sortAscending = (clients = [], orderByKey) => {
+    return clients.sort((prevClient, nextClient) => {
         return (
-            (prevUser.branch[orderByKey ?? "id"].toLowerCase() > nextClient.branch[orderByKey ?? "id"].toLowerCase()) ?
+            (prevClient[orderByKey ?? "id"] > nextClient[orderByKey ?? "id"]) ?
                 1
                 :
-                (prevUser.branch[orderByKey ?? "id"].toLowerCase() < nextClient.branch[orderByKey ?? "id"].toLowerCase()) ?
+                (prevClient[orderByKey ?? "id"] < nextClient[orderByKey ?? "id"]) ?
                     -1
                     :
                     0
@@ -49,52 +49,77 @@ export const sortAscending = (users = [], orderByKey) => {
     });
 };
 
-export const createNewUserObj = (existingUsers = []) => ({
-    id: generateUniqueUserID(existingUsers),
-    name: "",
-    username: "",
-    email: "",
-    address: {
-        street: "",
-        suite: "",
-        city: "",
-        zipcode: "",
-        geo: {
-            lat: "",
-            lng: ""
-        }
+export const createNewClientObj = (existingClients = []) => ({
+    id: generateUniqueClientID(existingClients),
+    client: {
+        clientName: "",
+        email: "",
+        phone: "",
+        startDate: "",
+        subscriptionStatus: ""
     },
-    phone: "",
-    website: "",
-    company: {
-        name: "",
-        catchPhrase: "",
-        bs: ""
+    business: {
+        businessType: "",
+        legalName: "",
+        licenseNumber: "",
+        taxNumber: "",
+        licenseDoc: "",
+        noOfBranches: ""
+    },
+    branch: {
+        storeName: "",
+        address: "",
+        email: "",
+        phone: ""
     }
 });
 
-const generateUniqueUserID = (existingUsers) => {
+const generateUniqueClientID = (existingClients) => {
     const maximumIDPresent = (
-        existingUsers
-            .map((user) => user.id)
+        existingClients
+            .map((client) => client.id)
             .reduce(((a, b) => a > b ? a : b), 0)
     );
     return (maximumIDPresent ?? 0) + 1;
 };
 
-export const camelToTitleCase = (camelCase) => {
-    return (
+export const camelToTitleCase = (input, omitFirstWord) => {
+    const camelCase = input
+        .replace(/([A-Z])/g, (match) => ` ${match}`)
+        .replace(/^./, (match) => match.toUpperCase())
+        .trim();
+
+    return (omitFirstWord) ?
+        camelCase.substring(camelCase.indexOf(" ") + 1, camelCase.length)
+        :
         camelCase
-            .replace(/([A-Z])/g, (match) => ` ${match}`)
-            .replace(/^./, (match) => match.toUpperCase())
-            .trim()
-    );
+};
+
+export const flattenObject = (obj) => {
+    let toReturn = {};
+
+    for (let i in obj) {
+        if (!obj.hasOwnProperty(i)) continue;
+
+        if ((typeof obj[i]) == 'object' && obj[i] !== null) {
+            var flatObject = flattenObject(obj[i]);
+            for (var x in flatObject) {
+                if (!flatObject.hasOwnProperty(x)) continue;
+
+                toReturn[i + "_" + x] = flatObject[x];
+            }
+        }
+        else {
+            toReturn[i] = obj[i];
+        }
+    }
+    return toReturn;
 };
 
 export const getNavRouteName = (history = {}) => {
     return (history?.location?.pathname === "/") ? "Clients" : "Clients";
 };
 
-export const getUser = (data) => {
+export const getClient = (data) => {
     return "Ahsan";
 };

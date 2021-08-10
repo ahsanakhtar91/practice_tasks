@@ -1,7 +1,7 @@
 import React from "react";
 import recordIcon from "../icons/record.svg";
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
-import { viewSearchedUser } from "../redux/actions/actionCreators";
+import { viewSearchedClient } from "../redux/actions/actionCreators";
 import { Spin } from "antd";
 
 export default function VoiceSearcher(props) {
@@ -21,7 +21,7 @@ export default function VoiceSearcher(props) {
         SpeechRecognition.stopListening();
         resetTranscript();
 
-        props.dispatch(viewSearchedUser(searchedText.trim()));
+        props.dispatch(viewSearchedClient(searchedText.trim()));
     };
 
     return (

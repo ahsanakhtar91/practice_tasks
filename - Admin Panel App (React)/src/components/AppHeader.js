@@ -3,10 +3,10 @@ import { withRouter } from "react-router-dom";
 import burgerMenu from "../icons/burger-menu.svg";
 import appLogo from "../icons/app-logo.png";
 import bellIcon from "../icons/bell-icon.png";
-import userIcon from "../icons/user-icon.png";
+import adminAvatar from "../icons/admin-avatar.png";
 import { Layout } from 'antd';
 import { connect } from "react-redux";
-import { getNavRouteName, getUser } from "../common/utils";
+import { getNavRouteName, getClient } from "../common/utils";
 
 function AppHeader(props) {
     const showHideDrawer = () => {
@@ -20,7 +20,7 @@ function AppHeader(props) {
                     <img
                         className="vap-icon click-impression"
                         src={burgerMenu}
-                        title="Add New User"
+                        title="Add New Client"
                         onClick={showHideDrawer}
                     />
                     <div className="top-label">{getNavRouteName(props.history)}</div>
@@ -28,7 +28,7 @@ function AppHeader(props) {
                 <img
                     className="vap-icon app-logo click-impression"
                     src={appLogo}
-                    title="Add New User"
+                    title="Add New Client"
                     onClick={() => props.history.push("")}
                 />
                 <div className="right-sec">
@@ -36,10 +36,10 @@ function AppHeader(props) {
                         className="vap-icon bell-icon click-impression"
                         src={bellIcon}
                     />
-                    <div className="label">{getUser()}</div>
+                    <div className="label">{getClient()}</div>
                     <img
-                        className="vap-icon user-icon click-impression"
-                        src={userIcon}
+                        className="vap-icon admin-avatar click-impression"
+                        src={adminAvatar}
                     />
                 </div>
             </div>
@@ -49,7 +49,7 @@ function AppHeader(props) {
 
 const mapStateToProps = (state, ownProps) => {
     return {
-        users: state.users,
+        clients: state.clients,
         searchText: state.searchText
     };
 }

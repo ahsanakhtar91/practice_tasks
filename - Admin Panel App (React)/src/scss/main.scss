@@ -8,7 +8,7 @@ $border-color: #cccccc;
 
 body {
     background-color: $app-bg-color;
-    font-family: "Roboto";
+    font-family: "Roboto", sans-serif !important;
 
     #app-root {
         vertical-align: center;
@@ -20,12 +20,12 @@ body {
         border-right: 0.5px solid $border-color;
     }
 
-    .side-menu-content {
+    .drawer-menu-content {
         display: flex;
         flex-wrap: wrap;
         flex-direction: row;
 
-        .side-menu-content-item {
+        .drawer-menu-content-item {
             display: flex;
             flex-direction: column;
             margin-right: 28px;
@@ -54,6 +54,8 @@ body {
 
             .app-logo {
                 width: unset;
+                height: 43px;
+                margin-top: -11px;
             }
 
             div.left-sec {
@@ -85,7 +87,7 @@ body {
                     margin: -19px 11px 0px 14px;
                 }
 
-                .user-icon {
+                .admin-avatar {
                     width: 26px;
                     height: 25px;
                 }
@@ -161,6 +163,35 @@ body {
                 }
             }
 
+            .export-excel-div {
+                height: 40px;
+                margin-left: 25px;
+                display: flex;
+                flex-direction: row;
+                margin-top: 25px;
+                border-radius: 10px;
+                border: 1px solid $main-color;
+                cursor: default;
+                font-weight: bold;
+
+                span {
+                    margin-top: -12px;
+                    margin-left: 12px;
+                }
+
+                .export-excel-icon {
+                    width: 20px;
+                    height: 20px;
+                    margin-left: 14px;
+                    margin-right: 10px;
+                    margin-top: 8px;
+                    cursor: pointer;
+                    background: url("../icons/export-excel.svg") no-repeat;
+                    border: 0px;
+                    overflow: hidden;
+                }
+            }
+
             .add-client-button {
                 height: 40px;
                 margin-left: 25px;
@@ -172,16 +203,106 @@ body {
                 border-radius: 10px;
                 background-color: $main-color;
                 border-color: $main-color;
+                font-weight: bold;
 
                 div {
-                    margin-top: 4px;
+                    margin-top: 3.5px;
                 }
 
                 .add-client-icon {
                     width: 18px;
                     height: 15px;
-                    margin-left: 18px;
+                    margin-left: 13px;
                     margin-top: 6px;
+                }
+            }
+        }
+    }
+
+    .ant-modal {
+        top: 30px;
+
+        .ant-modal-content {
+            .ant-modal-header {
+                text-align: center;
+            }
+
+            .ant-modal-body {
+                .client-details-form {
+                    .section-heading {
+                        font-size: 17px;
+                        font-weight: bold;
+                        margin-bottom: 8px;
+                        margin-left: 2px;
+                    }
+                    .column {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+                        margin-bottom: -1px;
+                        width: 100%;
+                    }
+
+                    .row {
+                        display: flex;
+                        flex-direction: row;
+                        width: calc(100% - 1px);
+                        height: 47px;
+                        border: 1px solid #dfe3e8;
+                    }
+
+                    .control-label {
+                        width: 39%;
+                        background-color: #f2f5f7;
+                        align-self: center;
+                        height: 98%;
+                        padding: 12px 0 0 19px;
+                        font-size: 14px;
+                        font-weight: bold;
+                    }
+
+                    .control-input {
+                        width: 61%;
+
+                        .ant-input-affix-wrapper {
+                            height: 100%;
+
+                            input {
+                                border-radius: 0px;
+                                font-size: 15px;
+                            }
+                        }
+
+                        .ant-select-selection {
+                            height: 100%;
+                            border-radius: 0px;
+                            font-size: 15px;
+
+                            .ant-select-selection-selected-value {
+                                margin-top: 7px;
+                            }
+                        }
+
+                        &.error input {
+                            border: 1px solid $validation-error-color;
+                        }
+                    }
+
+                    .error-text {
+                        width: 50%;
+                        padding-left: 68px;
+                        color: $validation-error-color;
+                    }
+
+                    .submit-button {
+                        width: 140px;
+                        height: 48px;
+                        border-radius: 10px;
+                        font-size: 15px;
+                        margin-left: 65px;
+                        margin-bottom: 5px;
+                    }
                 }
             }
         }
@@ -192,31 +313,6 @@ body {
             background: #fff;
             padding: 0px;
             min-height: 280px;
-
-            .user-details-form {
-                padding: 24px;
-
-                .column {
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                    justify-content: center;
-                    margin-bottom: 10px;
-
-                    .control {
-                        width: 50%;
-
-                        &.error input {
-                            border: 1px solid $validation-error-color;
-                        }
-                    }
-                    .error-text {
-                        width: 50%;
-                        padding-left: 3px;
-                        color: $validation-error-color;
-                    }
-                }
-            }
         }
 
         .clients-table {
@@ -234,6 +330,10 @@ body {
                 }
 
                 .ant-table-tbody {
+                    .three-dots-icon {
+                        cursor: pointer;
+                    }
+
                     .edit-button {
                         color: $edit-btn-color;
                         margin-right: 6.5px;

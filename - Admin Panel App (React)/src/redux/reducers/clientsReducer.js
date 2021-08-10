@@ -1,8 +1,8 @@
 import ActionTypes from "../actions/actionTypes";
-import { createNewUserObj, getClientsDataFromLocalStorage, setClientsDataIntoLocalStorage } from "../../common/utils";
+import { createNewClientObj, getClientsDataFromLocalStorage, setClientsDataIntoLocalStorage } from "../../common/utils";
 
 const initState = {
-    users: [],
+    clients: [],
     searchText: ""
 };
 
@@ -10,72 +10,92 @@ export const clientsReducer = (state = initState, action) => {
     switch (action.type) {
 
 
-        case ActionTypes.VIEW_ALL_USERS:
-            var users = getClientsDataFromLocalStorage(state);
+        case ActionTypes.VIEW_ALL_CLIENTS:
+            var clients = getClientsDataFromLocalStorage(state);
             return {
                 ...state,
-                users: [...users],
+                clients: [...clients],
                 searchText: ""
             };
 
 
-        case ActionTypes.VIEW_SEARCHED_USER:
-            var users = getClientsDataFromLocalStorage(state);
+        case ActionTypes.VIEW_SEARCHED_CLIENT:
+            var clients = getClientsDataFromLocalStorage(state);
             return {
                 ...state,
-                users: [...users],
+                clients: [...clients],
                 searchText: action.payload.searchText
             };
 
 
-        case ActionTypes.ADD_NEW_USER:
-            var users = getClientsDataFromLocalStorage(state);
-            let newUser = createNewUserObj(users);
-            newUser.name = action.payload.userData.name;
-            newUser.username = action.payload.userData.name.toLowerCase().replace(/\s/gi, "");
-            newUser.email = action.payload.userData.email;
-            newUser.address.city = action.payload.userData.city;
-            newUser.company.name = action.payload.userData.companyName;
-            users.push(newUser);
-            setClientsDataIntoLocalStorage(users);
+        case ActionTypes.ADD_NEW_CLIENT:
+            var clients = getClientsDataFromLocalStorage(state);
+            let newClient = createNewClientObj(clients);
+            newClient.client.clientName = action.payload.clientData.clientClientName;
+            newClient.client.email = action.payload.clientData.clientEmail;
+            newClient.client.phone = action.payload.clientData.clientPhone;
+            newClient.client.startDate = action.payload.clientData.clientStartDate;
+            newClient.client.subscriptionStatus = action.payload.clientData.clientSubscriptionStatus;
+            newClient.business.businessType = action.payload.clientData.businessBusinessType;
+            newClient.business.legalName = action.payload.clientData.businessLegalName;
+            newClient.business.licenseNumber = action.payload.clientData.businessLicenseNumber;
+            newClient.business.taxNumber = action.payload.clientData.businessTaxNumber;
+            newClient.business.licenseDoc = action.payload.clientData.businessLicenseDoc;
+            newClient.business.noOfBranches = action.payload.clientData.businessNoOfBranches;
+            newClient.branch.storeName = action.payload.clientData.branchStoreName;
+            newClient.branch.address = action.payload.clientData.branchAddress;
+            newClient.branch.email = action.payload.clientData.branchEmail;
+            newClient.branch.phone = action.payload.clientData.branchPhone;
+            clients.push(newClient);
+            setClientsDataIntoLocalStorage(clients);
             return {
                 ...state,
-                users: [...users],
+                clients: [...clients],
                 searchText: ""
             };
 
 
-        case ActionTypes.EDIT_USER:
-            var users = getClientsDataFromLocalStorage(state);
-            users = users.map((user) => {
-                if (user.id === action.payload.userData.id) {
-                    let updatedUser = user;
-                    updatedUser.name = action.payload.userData.name;
-                    updatedUser.username = action.payload.userData.name.toLowerCase().replace(/\s/gi, "");
-                    updatedUser.email = action.payload.userData.email;
-                    updatedUser.address.city = action.payload.userData.city;
-                    updatedUser.company.name = action.payload.userData.companyName;
-                    return updatedUser;
+        case ActionTypes.EDIT_CLIENT:
+            var clients = getClientsDataFromLocalStorage(state);
+            clients = clients.map((client) => {
+                if (client.id === action.payload.clientData.id) {
+                    let updatedClient = client;
+                    updatedClient.client.clientName = action.payload.clientData.clientClientName;
+                    updatedClient.client.email = action.payload.clientData.clientEmail;
+                    updatedClient.client.phone = action.payload.clientData.clientPhone;
+                    updatedClient.client.startDate = action.payload.clientData.clientStartDate;
+                    updatedClient.client.subscriptionStatus = action.payload.clientData.clientSubscriptionStatus;
+                    updatedClient.business.businessType = action.payload.clientData.businessBusinessType;
+                    updatedClient.business.legalName = action.payload.clientData.businessLegalName;
+                    updatedClient.business.licenseNumber = action.payload.clientData.businessLicenseNumber;
+                    updatedClient.business.taxNumber = action.payload.clientData.businessTaxNumber;
+                    updatedClient.business.licenseDoc = action.payload.clientData.businessLicenseDoc;
+                    updatedClient.business.noOfBranches = action.payload.clientData.businessNoOfBranches;
+                    updatedClient.branch.storeName = action.payload.clientData.branchStoreName;
+                    updatedClient.branch.address = action.payload.clientData.branchAddress;
+                    updatedClient.branch.email = action.payload.clientData.branchEmail;
+                    updatedClient.branch.phone = action.payload.clientData.branchPhone;
+                    return updatedClient;
                 }
                 else {
-                    return user;
+                    return client;
                 }
             });
-            setClientsDataIntoLocalStorage(users);
+            setClientsDataIntoLocalStorage(clients);
             return {
                 ...state,
-                users: [...users],
+                clients: [...clients],
                 searchText: ""
             };
 
 
-        case ActionTypes.DELETE_USER:
-            var users = getClientsDataFromLocalStorage(state);
-            users = users.filter((user) => user.id !== action.payload.userID);
-            setClientsDataIntoLocalStorage(users);
+        case ActionTypes.DELETE_CLIENT:
+            var clients = getClientsDataFromLocalStorage(state);
+            clients = clients.filter((client) => client.id !== action.payload.clientID);
+            setClientsDataIntoLocalStorage(clients);
             return {
                 ...state,
-                users: [...users]
+                clients: [...clients]
             };
 
 
