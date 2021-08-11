@@ -27,7 +27,7 @@ A vibrant, elegant and user-friendly web app, which acts as an Admin Panel, buil
 - **Deleting** a client.
 - **Exporting** all of the existing clients to Excel format (**CSV**).
 
-<code>**Live Demo**: </code>
+<code>**Live Demo**: https://the-admin-panel.netlify.app</code>
 
 Steps to run the Admin Panel App:
 - Run command <code>yarn install</code> on the root directory of Admin Panel App to install the node packages.
