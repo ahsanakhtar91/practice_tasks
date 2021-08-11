@@ -47,7 +47,7 @@ function ContentHeader(props) {
                     <Input
                         ref={searchBarRef}
                         className="search-bar"
-                        placeholder="Search by typing the name..."
+                        placeholder="Search by typing the store name..."
                         prefix={
                             props.searchText ?
                                 <img

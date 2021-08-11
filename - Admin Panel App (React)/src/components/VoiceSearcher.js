@@ -38,7 +38,7 @@ export default function VoiceSearcher(props) {
                 <img
                     className="record-icon click-impression"
                     src={recordIcon}
-                    title="Search by saying the name..."
+                    title="Search by saying the store name..."
                     onClick={(!listening) ? startRecordingVoiceTranscript : stopRecordingVoiceTranscript}
                     style={{ transform: `scale(${listening ? "1.5" : "1"})` }}
                 />
