@@ -7,7 +7,7 @@ import { camelToTitleCase } from "../common/utils";
 import { withRouter } from "react-router-dom";
 
 function ClientDetailsForm(props) {
-    const clientID = ((props.mode === NAV_MODES.editClient && props.match.params?.clientID) ?
+    const clientID = (((props.mode === NAV_MODES.viewClient || props.mode === NAV_MODES.editClient) && props.match.params?.clientID) ?
         parseInt(props.match.params?.clientID)
         :
         null
@@ -17,6 +17,7 @@ function ClientDetailsForm(props) {
         :
         null
     );
+    const fetchInitialValueFromProps = ((props.mode === NAV_MODES.viewClient || props.mode === NAV_MODES.editClient) && clientObjToEdit);
 
     const sectionsIdentifierKeys = {
         clientClientName: "Client Details",
@@ -26,23 +27,23 @@ function ClientDetailsForm(props) {
 
     const initState = {
         values: {
-            clientClientName: (props.mode === NAV_MODES.editClient && clientObjToEdit) ? clientObjToEdit.client.clientName : "",
-            clientEmail: (props.mode === NAV_MODES.editClient && clientObjToEdit) ? clientObjToEdit.client.email : "",
-            clientPhone: (props.mode === NAV_MODES.editClient && clientObjToEdit) ? clientObjToEdit.client.phone : "",
-            clientStartDate: (props.mode === NAV_MODES.editClient && clientObjToEdit) ? clientObjToEdit.client.startDate : new Date().toLocaleDateString("en-CA"),
-            clientSubscriptionStatus: (props.mode === NAV_MODES.editClient && clientObjToEdit) ? clientObjToEdit.client.subscriptionStatus : "Active",
+            clientClientName: (fetchInitialValueFromProps) ? clientObjToEdit.client.clientName : "",
+            clientEmail: (fetchInitialValueFromProps) ? clientObjToEdit.client.email : "",
+            clientPhone: (fetchInitialValueFromProps) ? clientObjToEdit.client.phone : "",
+            clientStartDate: (fetchInitialValueFromProps) ? clientObjToEdit.client.startDate : new Date().toLocaleDateString("en-CA"),
+            clientSubscriptionStatus: (fetchInitialValueFromProps) ? clientObjToEdit.client.subscriptionStatus : "Active",
 
-            businessBusinessType: (props.mode === NAV_MODES.editClient && clientObjToEdit) ? clientObjToEdit.business.businessType : "",
-            businessLegalName: (props.mode === NAV_MODES.editClient && clientObjToEdit) ? clientObjToEdit.business.legalName : "",
-            businessLicenseNumber: (props.mode === NAV_MODES.editClient && clientObjToEdit) ? clientObjToEdit.business.licenseNumber : "",
-            businessTaxNumber: (props.mode === NAV_MODES.editClient && clientObjToEdit) ? clientObjToEdit.business.taxNumber : "",
-            businessLicenseDoc: "",
-            businessNoOfBranches: (props.mode === NAV_MODES.editClient && clientObjToEdit) ? clientObjToEdit.business.noOfBranches : "",
+            businessBusinessType: (fetchInitialValueFromProps) ? clientObjToEdit.business.businessType : "",
+            businessLegalName: (fetchInitialValueFromProps) ? clientObjToEdit.business.legalName : "",
+            businessLicenseNumber: (fetchInitialValueFromProps) ? clientObjToEdit.business.licenseNumber : "",
+            businessTaxNumber: (fetchInitialValueFromProps) ? clientObjToEdit.business.taxNumber : "",
+            businessLicenseDoc: (props.mode === NAV_MODES.viewClient) ? clientObjToEdit.business.licenseDoc : "",
+            businessNoOfBranches: (fetchInitialValueFromProps) ? clientObjToEdit.business.noOfBranches : "",
 
-            branchStoreName: (props.mode === NAV_MODES.editClient && clientObjToEdit) ? clientObjToEdit.branch.storeName : "",
-            branchAddress: (props.mode === NAV_MODES.editClient && clientObjToEdit) ? clientObjToEdit.branch.address : "",
-            branchEmail: (props.mode === NAV_MODES.editClient && clientObjToEdit) ? clientObjToEdit.branch.email : "",
-            branchPhone: (props.mode === NAV_MODES.editClient && clientObjToEdit) ? clientObjToEdit.branch.phone : ""
+            branchStoreName: (fetchInitialValueFromProps) ? clientObjToEdit.branch.storeName : "",
+            branchAddress: (fetchInitialValueFromProps) ? clientObjToEdit.branch.address : "",
+            branchEmail: (fetchInitialValueFromProps) ? clientObjToEdit.branch.email : "",
+            branchPhone: (fetchInitialValueFromProps) ? clientObjToEdit.branch.phone : ""
         },
         errors: {
             clientClientName: "",
@@ -145,67 +146,71 @@ function ClientDetailsForm(props) {
                             <div className="control-label">{camelToTitleCase(key, true)}</div>
 
                             <div className={`control-input ${state.errors[key] ? "error" : ""}`}>
-                                {(key !== "clientSubscriptionStatus" && key !== "businessBusinessType" && key !== "businessLicenseDoc") ?
-                                    <Input
-                                        allowClear={true}
-                                        placeholder={"Enter " + camelToTitleCase(key, true)}
-                                        defaultValue={(key.match(/date/i) && !clientObjToEdit) ?
-                                            new Date().toLocaleDateString("en-CA")
-                                            :
-                                            (key.match(/date/i)) ?
-                                                new Date(state.values[key]).toLocaleDateString("en-CA")
-                                                :
-                                                state.values[key]
-                                        }
-                                        maxLength={50}
-                                        type={(key.match(/number|phone|noOF/i)) ?
-                                            "number"
-                                            :
-                                            (key.match(/date/i)) ? "date" : "text"
-                                        }
-                                        disabled={(key.match(/date/i) && !clientObjToEdit)}
-                                        title={camelToTitleCase(key, true)}
-                                        onChange={(event) => {
-                                            (key.match(/date/i)) ?
-                                                onValueChanged(key, new Date(event.target.value).toLocaleDateString("en-US"))
-                                                :
-                                                onValueChanged(key, event.target.value)
-                                        }}
-                                    />
-                                    :
-                                    (key === "clientSubscriptionStatus") ?
-                                        <Select
-                                            disabled={!clientObjToEdit}
+                                {(props.mode === NAV_MODES.addClient || props.mode === NAV_MODES.editClient) ?
+                                    ((key !== "clientSubscriptionStatus" && key !== "businessBusinessType" && key !== "businessLicenseDoc") ?
+                                        <Input
+                                            allowClear={true}
                                             placeholder={"Enter " + camelToTitleCase(key, true)}
-                                            defaultValue={state.values[key] ? state.values[key] : "Active"}
-                                            style={{ width: "100%", height: "100%" }}
-                                            onChange={(value) => onValueChanged(key, value)}
-                                        >
-                                            <Select.Option key="1" value="Active">Active</Select.Option>
-                                            <Select.Option key="2" value="Inactive">Inactive</Select.Option>
-                                        </Select>
+                                            defaultValue={(key.match(/date/i) && !clientObjToEdit) ?
+                                                new Date().toLocaleDateString("en-CA")
+                                                :
+                                                (key.match(/date/i)) ?
+                                                    new Date(state.values[key]).toLocaleDateString("en-CA")
+                                                    :
+                                                    state.values[key]
+                                            }
+                                            maxLength={50}
+                                            type={(key.match(/number|phone|noOF/i)) ?
+                                                "number"
+                                                :
+                                                (key.match(/date/i)) ? "date" : "text"
+                                            }
+                                            disabled={(key.match(/date/i) && !clientObjToEdit)}
+                                            title={camelToTitleCase(key, true)}
+                                            onChange={(event) => {
+                                                (key.match(/date/i)) ?
+                                                    onValueChanged(key, new Date(event.target.value).toLocaleDateString("en-US"))
+                                                    :
+                                                    onValueChanged(key, event.target.value)
+                                            }}
+                                        />
                                         :
-                                        (key === "businessBusinessType") ?
+                                        (key === "clientSubscriptionStatus") ?
                                             <Select
+                                                disabled={!clientObjToEdit}
                                                 placeholder={"Enter " + camelToTitleCase(key, true)}
-                                                defaultValue={state.values[key] ? state.values[key] : ""}
+                                                defaultValue={state.values[key] ? state.values[key] : "Active"}
                                                 style={{ width: "100%", height: "100%" }}
                                                 onChange={(value) => onValueChanged(key, value)}
                                             >
-                                                <Select.Option key="1" value="Online Store">Online Store</Select.Option>
-                                                <Select.Option key="2" value="Online Business">Online Business</Select.Option>
-                                                <Select.Option key="3" value="Shop">Shop</Select.Option>
-                                                <Select.Option key="4" value="Homemade">Homemade</Select.Option>
-                                                <Select.Option key="6" value="Cart">Cart</Select.Option>
-                                                <Select.Option key="5" value="Sweet Cart">Sweet Cart</Select.Option>
+                                                <Select.Option key="1" value="Active">Active</Select.Option>
+                                                <Select.Option key="2" value="Inactive">Inactive</Select.Option>
                                             </Select>
                                             :
-                                            <Input
-                                                defaultValue={state.values[key] ? state.values[key] : ""}
-                                                type="file"
-                                                style={{ width: "100%", height: "100%", paddingTop: "8px" }}
-                                                onChange={(event) => onValueChanged(key, event.target.value)}
-                                            />
+                                            (key === "businessBusinessType") ?
+                                                <Select
+                                                    placeholder={"Enter " + camelToTitleCase(key, true)}
+                                                    defaultValue={state.values[key] ? state.values[key] : ""}
+                                                    style={{ width: "100%", height: "100%" }}
+                                                    onChange={(value) => onValueChanged(key, value)}
+                                                >
+                                                    <Select.Option key="1" value="Online Store">Online Store</Select.Option>
+                                                    <Select.Option key="2" value="Online Business">Online Business</Select.Option>
+                                                    <Select.Option key="3" value="Shop">Shop</Select.Option>
+                                                    <Select.Option key="4" value="Homemade">Homemade</Select.Option>
+                                                    <Select.Option key="6" value="Cart">Cart</Select.Option>
+                                                    <Select.Option key="5" value="Sweet Cart">Sweet Cart</Select.Option>
+                                                </Select>
+                                                :
+                                                <Input
+                                                    defaultValue={state.values[key] ? state.values[key] : ""}
+                                                    type="file"
+                                                    style={{ width: "100%", height: "100%", paddingTop: "8px" }}
+                                                    onChange={(event) => onValueChanged(key, event.target.value)}
+                                                />
+                                    )
+                                    :
+                                    <div className="read-only-value" title={state.values[key]}>{state.values[key]}</div>
                                 }
                             </div>
                         </div>

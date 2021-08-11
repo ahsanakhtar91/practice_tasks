@@ -84,28 +84,19 @@ export default function App() {
                                         <Route exact path="/"></Route>
 
                                         <Route exact path="/add-client">
-                                            <Modal
-                                                title={"Add New Client"}
-                                                centered={false}
-                                                visible={true}
-                                                footer={false}
-                                                closable={true}
-                                                onCancel={() => history.push("")}
-                                            >
+                                            <Modal title={"Add New Client"} centered={false} visible={true} footer={false} closable={true} onCancel={() => history.push("")}>
                                                 <ClientDetailsForm mode={NAV_MODES.addClient} />
                                             </Modal>
                                         </Route>
 
+                                        <Route exact path="/view-client/:clientID">
+                                            <Modal title={"View Client"} centered={false} visible={true} footer={false} closable={true} onCancel={() => history.push("")}>
+                                                <ClientDetailsForm mode={NAV_MODES.viewClient} />
+                                            </Modal>
+                                        </Route>
+
                                         <Route exact path="/edit-client/:clientID">
-                                            <Modal
-                                                title={"Edit Client"}
-                                                centered={false}
-                                                visible={true}
-                                                footer={false}
-                                                closable={true}
-                                                destroyOnClose={true}
-                                                onCancel={() => history.push("")}
-                                            >
+                                            <Modal title={"Edit Client"} centered={false} visible={true} footer={false} closable={true} destroyOnClose={true} onCancel={() => history.push("")}>
                                                 <ClientDetailsForm mode={NAV_MODES.editClient} />
                                             </Modal>
                                         </Route>

@@ -1,6 +1,7 @@
 export const NAV_MODES = {
     home: "home",
     addClient: "addClient",
+    viewClient: "viewClient",
     editClient: "editClient"
 }
 

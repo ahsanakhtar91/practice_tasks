@@ -61,7 +61,7 @@ function ClientsList(props) {
                     )}>
                         <a className="ant-dropdown-link" onClick={(event) => event.preventDefault()}>
                             <img
-                                className="vap-icon admin-avatar click-impression"
+                                className="vap-icon three-dots-icon click-impression"
                                 src={threeDotsIcon}
                             />
                         </a>
