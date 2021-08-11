@@ -11,7 +11,7 @@ It currently includes total **9** of my practice tasks:
 <code>**Live Demo**: </code>
 
 A vibrant, elegant and user-friendly web app, which acts as an Admin Panel, built in **React** using **React Hooks**, **Redux**, **Ant Design**, **React Router**, **SCSS**, Babel, Webpack, etc. Core functionalities of this App:
-- A nice looking design with professional design elements (**Header**, **Drawer Menu**, **Side Menu** and **Content**)
+- A nice looking design with professional design elements (**Header**, **Drawer Menu**, **Side Menu** and **Content**).
 - Managing (Creating, Viewing, Searching, Editing and Deleting) the clients. 
 - Storing and Maintaining the clients inside **Redux Store** as well as in **localStorage** with every update (so that the client data persists even after reloading).
 - Loading **mock data** from a json file initially into **Redux Store** as well as in **localStorage**.
