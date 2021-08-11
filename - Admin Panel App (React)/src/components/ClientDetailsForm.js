@@ -169,7 +169,7 @@ function ClientDetailsForm(props) {
                                             title={camelToTitleCase(key, true)}
                                             onChange={(event) => {
                                                 (key.match(/date/i)) ?
-                                                    onValueChanged(key, new Date(event.target.value).toLocaleDateString("en-US"))
+                                                    onValueChanged(key, (event.target.value ? new Date(event.target.value).toLocaleDateString("en-US") : ""))
                                                     :
                                                     onValueChanged(key, event.target.value)
                                             }}
