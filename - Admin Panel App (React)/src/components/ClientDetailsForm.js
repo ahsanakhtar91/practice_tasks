@@ -222,11 +222,15 @@ function ClientDetailsForm(props) {
             ))
             }
             <div className="column" style={{ marginTop: "25px" }}>
-                <div className="control-input">
-                    <Button className="submit-button click-impression" disabled={Object.values(state.errors).join("").trim()} type="primary" onClick={onSubmit}>
-                        {props.mode === NAV_MODES.addClient ? "Add Client" : "Save Changes"}
-                    </Button>
-                </div>
+                {(props.mode !== NAV_MODES.viewClient) ?
+                    <div className="control-input">
+                        <Button className="submit-button click-impression" disabled={Object.values(state.errors).join("").trim()} type="primary" onClick={onSubmit}>
+                            {props.mode === NAV_MODES.addClient ? "Add Client" : "Save Changes"}
+                        </Button>
+                    </div>
+                    :
+                    <></>
+                }
             </div>
         </div >
     );
