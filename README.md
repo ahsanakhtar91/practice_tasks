@@ -8,7 +8,7 @@ It currently includes total **9** of my practice tasks:
 1) Admin Panel App (React)
 --------------------------
 
-<code>**Live Demo**: </code>
+<code>**Live Demo**: https://the-admin-panel.netlify.app</code>
 
 A vibrant, elegant and user-friendly web app, which acts as an Admin Panel, built in **React** using **React Hooks**, **Redux**, **Ant Design**, **React Router**, **SCSS**, Babel, Webpack, etc. Core functionalities of this App:
 - A nice looking design with professional design elements (**Header**, **Drawer Menu**, **Side Menu** and **Content**).
