@@ -229,7 +229,8 @@ function ClientDetailsForm(props) {
                         </Button>
                     </div>
                     :
-                    <></>
+                    <>
+                    </>
                 }
             </div>
         </div >
