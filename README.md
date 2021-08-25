@@ -1,6 +1,6 @@
 # Practice Tasks
 
-A repository for a few of my recent sample coding practice tasks
+A repository for a few of my recent practice apps that I like to develop as fun in my free time.
 
 It currently includes total **9** of my practice tasks:
 
