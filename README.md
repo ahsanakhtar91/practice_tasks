@@ -2,7 +2,7 @@
 
 A repository for a few of my recent practice apps that I like to develop as fun in my free time.
 
-It currently includes total **10** of my practice tasks:
+It currently includes total **10** of my practice tasks: 
 
 --------------------------
 1) Admin Panel App (React)
