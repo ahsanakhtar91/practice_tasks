@@ -2,7 +2,7 @@
 
 A repository for a few of my recent practice apps that I like to develop as fun in my free time.
 
-It currently includes total **9** of my practice tasks:
+It currently includes total **10** of my practice tasks:
 
 --------------------------
 1) Admin Panel App (React)
@@ -63,13 +63,29 @@ Steps to run the Users Manager:
 - Access the app in your browser with: <code>http://localhost:3000</code>
 
 ---------------------------
-3) Fluid WebPage (ClipMine)
+3) Variable Counter (React)
+---------------------------
+
+A small sample Counter app, which I created while doing a Live Coding Challenge, built in **React** and **TypeScript** using **React Hooks**, **CSS**, Babel, Webpack, etc. Scope of this App:
+- A **Counter** component.
+- Maintaining the existing count in state and **Viewing** it on the top.
+- **Adding** and **Subtracting** to the current count using the steps of **1** and **5**.
+- Maintaining and showing the **History** of all the actions performed upon the counter after every state update.
+- Evaluating and showing the **Maximum Number** from the **History** after every state update.
+
+Steps to run the Variable Counter App:
+- Run command <code>yarn install</code> on the root directory of Variable Counter App to install the node packages.
+- Run the App by running the command <code>yarn start</code> on the root directory.
+- Access the app in your browser with: <code>http://localhost:3000</code>
+
+---------------------------
+4) Fluid WebPage (ClipMine)
 ---------------------------
 
 A static web page created with emphasis on fluid design, created using HTML, CSS Grids, Flexbox
 
 ------------------------
-4) Notebooks App (React)
+5) Notebooks App (React)
 ------------------------
 
 A sample app demonstrating the use of ReactJS, JavaScript, JSX, HTML, CSS, MaterialUI, Webpack, React Router, etc. on Front End and an API written in NodeJS on Back End. Core functionalities of this App:
@@ -88,7 +104,7 @@ Steps to run the Notebooks App:
 - Access the app by using secure protocol: <code>https://localhost:8080</code>
 
 ------------
-5) Redux App
+6) Redux App
 ------------
 
 A Sample Practice App involving the use of React, Redux, Redux Saga, React Router, AntDesign, etc. Core functionalities of this App:
@@ -102,7 +118,7 @@ Steps to run the Redux App:
 - Access the app in your browser with: <code>http://localhost:8080</code>
 
 --------------------
-6) Redux App (Immer)
+7) Redux App (Immer)
 --------------------
 
 A copy of <code>Redux App</code> (App # 3), but with many additional technical implementations like:
@@ -113,7 +129,7 @@ Steps to run the Redux App (Immer):
 - Same as App # 3
 
 ----------------------------
-7) Product Items App (React)
+8) Product Items App (React)
 ----------------------------
 
 A Products List & Cart App implemented using React, Redux, Ant Design, Reducers, Redux Saga, React Router, LESS, Babel, Webpack, etc. Core functionalities of this App:
@@ -132,7 +148,7 @@ Steps to run the Product Items App:
 - Access the app in your browser with: <code>http://localhost:3000</code>
 
 ----------------------------
-8) Registration Form (React)
+9) Registration Form (React)
 ----------------------------
 
 A sample Registration Form implemented in React using React Hooks, MaterialUI, React Router, Babel, Webpack, etc. Core functionalities of this App:
@@ -147,7 +163,7 @@ Steps to run the Registration Form:
 - Access the app in your browser with: <code>http://localhost:8080</code>
 
 ----------------------------
-9) Timeline Form (React)
+10) Timeline Form (React)
 ----------------------------
 
 A sample Timeline Form implemented in React using React Hooks, MaterialUI, React Router, Babel, Webpack, etc. Core functionalities of this App:
