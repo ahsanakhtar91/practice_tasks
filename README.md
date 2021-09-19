@@ -2,7 +2,7 @@
 
 A repository for a few of my recent practice apps that I like to develop as fun in my free time.
 
-It currently includes total **10** of my practice tasks: 
+It currently includes total **11** of my practice tasks: 
 
 --------------------------
 1) Admin Panel App (React)
@@ -34,8 +34,32 @@ Steps to run the Admin Panel App:
 - Run the App by running the command <code>yarn start</code> on the root directory.
 - Access the app in your browser with: <code>http://localhost:3000</code>
 
+---------------------------------
+2) Football Games Tracker (React)
+---------------------------------
+
+<code>**Live Demo**: https://football-games.netlify.app</code>
+
+A responsive web app with a nice looking UI, built on mobile-first approach (suitable for all device sizes), which acts as Football Games Viewer/Tracker, built in **React** and **TypeScript** using **React Hooks**, **Redux**, **Redux Thunk**, **SCSS**, **Media Queries**, **Flexbox**, Babel, Webpack, etc. Core functionalities of this App:
+- An eye catching mobile-friendly page thats lists football games (suitable for viewing on all notebooks, desktops, tablets and mobile phones).
+- A **Live API** with **authorization** integrated that fetches the results of ongoing, upcoming and past football game fixtures. 
+- Code is refactored and written using **TypeScript interfaces** to make it as **strictly typed** as possible.
+- All the games/fixtures shown as a list of responsive mobile-friendly **Cards** using **Flexbox** and  **Media Queries**.
+- Implemented the functionality to mark any of the games as your **Favourite**, and the ability to view all those later based on the Favourites filter.
+- All the games marked as **Favourites**, are stored and maintained in **localStorage** after marking as Favourite (so that the data persists even after reloading).
+- Implemented **Filters** upon the results of the football games on UI, based upon **3** different **filtering options**, which are: **Show All**, **Favourites** and **Live Games**.
+- Storing the full games list inside the **Redux Store** after fetching from the API (to avoid **props drilling** and for easy **sharing** between components at different levels).
+- **Lazy Loading** functionality implemented to avoid performance issues (**30** games loaded initially, and then the user can keep pressing **Load More** button provided at the bottom of the results, until the available **total count** limit is reached and all the results are successfully viewed).
+
+<code>**Live Demo**: https://football-games.netlify.app</code>
+
+Steps to run the Football Games Tracker App:
+- Run command <code>yarn install</code> on the root directory of Football Games Tracker App to install the node packages.
+- Run the App by running the command <code>yarn start</code> on the root directory.
+- Access the app in your browser with: <code>http://localhost:3000</code>
+
 ------------------------
-2) Users Manager (React)
+3) Users Manager (React)
 ------------------------
 
 <code>**Live Demo**: https://users-manager-react.netlify.app</code>
@@ -63,7 +87,7 @@ Steps to run the Users Manager:
 - Access the app in your browser with: <code>http://localhost:3000</code>
 
 ---------------------------
-3) Variable Counter (React)
+4) Variable Counter (React)
 ---------------------------
 
 A small sample Counter app, which I created while doing a Live Coding Challenge, built in **React** and **TypeScript** using **React Hooks**, **CSS**, Babel, Webpack, etc. Scope of this App:
@@ -79,13 +103,13 @@ Steps to run the Variable Counter App:
 - Access the app in your browser with: <code>http://localhost:3000</code>
 
 ---------------------------
-4) Fluid WebPage (ClipMine)
+5) Fluid WebPage (ClipMine)
 ---------------------------
 
 A static web page created with emphasis on fluid design, created using HTML, CSS Grids, Flexbox
 
 ------------------------
-5) Notebooks App (React)
+6) Notebooks App (React)
 ------------------------
 
 A sample app demonstrating the use of ReactJS, JavaScript, JSX, HTML, CSS, MaterialUI, Webpack, React Router, etc. on Front End and an API written in NodeJS on Back End. Core functionalities of this App:
@@ -104,7 +128,7 @@ Steps to run the Notebooks App:
 - Access the app by using secure protocol: <code>https://localhost:8080</code>
 
 ------------
-6) Redux App
+7) Redux App
 ------------
 
 A Sample Practice App involving the use of React, Redux, Redux Saga, React Router, AntDesign, etc. Core functionalities of this App:
@@ -118,7 +142,7 @@ Steps to run the Redux App:
 - Access the app in your browser with: <code>http://localhost:8080</code>
 
 --------------------
-7) Redux App (Immer)
+8) Redux App (Immer)
 --------------------
 
 A copy of <code>Redux App</code> (App # 3), but with many additional technical implementations like:
@@ -129,7 +153,7 @@ Steps to run the Redux App (Immer):
 - Same as App # 3
 
 ----------------------------
-8) Product Items App (React)
+9) Product Items App (React)
 ----------------------------
 
 A Products List & Cart App implemented using React, Redux, Ant Design, Reducers, Redux Saga, React Router, LESS, Babel, Webpack, etc. Core functionalities of this App:
@@ -148,7 +172,7 @@ Steps to run the Product Items App:
 - Access the app in your browser with: <code>http://localhost:3000</code>
 
 ----------------------------
-9) Registration Form (React)
+10) Registration Form (React)
 ----------------------------
 
 A sample Registration Form implemented in React using React Hooks, MaterialUI, React Router, Babel, Webpack, etc. Core functionalities of this App:
@@ -163,7 +187,7 @@ Steps to run the Registration Form:
 - Access the app in your browser with: <code>http://localhost:8080</code>
 
 ----------------------------
-10) Timeline Form (React)
+11) Timeline Form (React)
 ----------------------------
 
 A sample Timeline Form implemented in React using React Hooks, MaterialUI, React Router, Babel, Webpack, etc. Core functionalities of this App:
