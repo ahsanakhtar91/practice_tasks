@@ -41,7 +41,7 @@ Steps to run the Admin Panel App:
 <code>**Live Demo**: https://football-games.netlify.app</code>
 
 A responsive web app with a nice looking UI, built on mobile-first approach (suitable for all device sizes), which acts as Football Games Viewer/Tracker, built in **React** and **TypeScript** using **React Hooks**, **Redux**, **Redux Thunk**, **SCSS**, **Media Queries**, **Flexbox**, Babel, Webpack, etc. Core functionalities of this App:
-- An eye catching mobile-friendly page thats lists football games (suitable for viewing on all notebooks, desktops, tablets and mobile phones).
+- An eye catching mobile-friendly page that lists the football games (suitable for viewing on all notebooks, desktops, tablets and mobile phones).
 - A **Live API** with **authorization** integrated that fetches the results of ongoing, upcoming and past football game fixtures. 
 - Code is refactored and written using **TypeScript interfaces** to make it as **strictly typed** as possible.
 - All the games/fixtures shown as a list of responsive mobile-friendly **Cards** using **Flexbox** and  **Media Queries**.
