@@ -36,14 +36,19 @@ const App = () => {
   });
 
   const response: Array<GameDetail> = state?.data?.response ?? [];
+  const filteredResponse: Array<GameDetail> = getFilteredResponse(
+    response,
+    filterApplied
+  );
 
   const lazyLoadMoreData = () => {
     setState((prevState) => ({
       ...prevState,
       loadedItems:
-        prevState.loadedItems + 30 < response.length
+        prevState.loadedItems + 30 <
+        (filterApplied ? filteredResponse : response).length
           ? prevState.loadedItems + 30
-          : response.length,
+          : (filterApplied ? filteredResponse : response).length,
     }));
   };
 
@@ -81,11 +86,7 @@ const App = () => {
       ) : (
         <>
           <ul className="cards-list">
-            {(
-              (filterApplied
-                ? getFilteredResponse(response, filterApplied)
-                : response) ?? []
-            )
+            {((filterApplied ? filteredResponse : response) ?? [])
               ?.slice(0, state?.loadedItems)
               ?.map((cardData: GameDetail, index: number) => (
                 <Card
@@ -99,12 +100,21 @@ const App = () => {
           <div className="load-more">
             <div className="items-count">
               {"Showing "}
-              <span>{state?.loadedItems}</span>
+              <span>
+                {filterApplied
+                  ? filteredResponse.length < state?.loadedItems
+                    ? filteredResponse.length
+                    : state?.loadedItems
+                  : state?.loadedItems}
+              </span>
               {" out of total "}
-              <span>{response?.length}</span>
+              <span>
+                {(filterApplied ? filteredResponse : response).length}
+              </span>
               {" games."}
             </div>
-            {state?.loadedItems < response.length && (
+            {state?.loadedItems <
+              (filterApplied ? filteredResponse : response).length && (
               <button
                 className="btn-load-more"
                 onClick={() => lazyLoadMoreData()}
