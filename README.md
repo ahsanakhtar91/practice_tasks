@@ -2,45 +2,10 @@
 
 A repository for a few of my recent practice apps that I like to develop as fun in my free time.
 
-It currently includes total **13** of my practice tasks:
+It currently includes total **12** of my practice tasks: 
 
 ------------------------------------
-1) Object Detector (React Native)
-------------------------------------
-
-A small example app in **React Native**, related to <code>**AI**</code> and <code>**Machine Learning**</code>. 
-
-Built using **React Native CLI** / **TypeScript**.
-
-#### :video_camera: <code>**Live Demo**: https://jumpshare.com/s/MbKCGBDost6kEcPzDFfw</code>
-
-The features of this app are:
-* It detects objects from the images on _Android_, either captured by **camera** (front/back) or picked from the **gallery** on the mobile device.
-* After detection is successful, it shows a list of detected objects (up to 4) along with their probabilities.
-
-## Packages:
-
-* Object Detection happens with **TensorFlow**'s `mobilenet_v2` ML model (using [@tensorflow/tfjs-react-native](https://www.npmjs.com/package/@tensorflow/tfjs-react-native) and [@tensorflow-models/mobilenet](https://www.npmjs.com/package/@tensorflow-models/mobilenet)).
-* [react-native-camera-kit](https://www.npmjs.com/package/react-native-camera-kit) is used for capturing images with camera (front/back).
-* [react-native-image-crop-picker](https://www.npmjs.com/package/react-native-image-crop-picker) is used for picking images from the gallery (can crop if needed).
-
-## Steps to run
-
-```bash
-# Install Packages
-$ yarn
-
-# Start Metro
-$ yarn start --reset-cache
-
-# Run on Android (only Android is configured in this project).
-$ yarn android
-```
-
-**Tested on**: Xiaomi Redmi Note 10S
-
-------------------------------------
-2) Video Frame Picker (React Native)
+1) Video Frame Picker (React Native)
 ------------------------------------
 
 **Live Demo** video is attached below!
@@ -75,7 +40,7 @@ Steps to run the Video Frame Picker (React Native) App:
 - If all goes well, you will see the app running in your iOS Simulator.
 
 --------------------------
-3) Admin Panel App (React)
+2) Admin Panel App (React)
 --------------------------
 
 <code>**Live Demo**: https://the-admin-panel.netlify.app</code>
@@ -105,7 +70,7 @@ Steps to run the Admin Panel App:
 - Access the app in your browser with: <code>http://localhost:3000</code>
 
 ---------------------------------
-4) Football Games Tracker (React)
+3) Football Games Tracker (React)
 ---------------------------------
 
 <code>**Live Demo**: https://football-games.netlify.app</code>
@@ -129,7 +94,7 @@ Steps to run the Football Games Tracker App:
 - Access the app in your browser with: <code>http://localhost:3000</code>
 
 ------------------------
-5) Users Manager (React)
+4) Users Manager (React)
 ------------------------
 
 <code>**Live Demo**: https://users-manager-react.netlify.app</code>
@@ -157,7 +122,7 @@ Steps to run the Users Manager:
 - Access the app in your browser with: <code>http://localhost:3000</code>
 
 ---------------------------
-6) Variable Counter (React)
+5) Variable Counter (React)
 ---------------------------
 
 A small sample Counter app, which I created while doing a Live Coding Challenge, built in **React** and **TypeScript** using **React Hooks**, **CSS**, Babel, Webpack, etc. Scope of this App:
@@ -173,13 +138,13 @@ Steps to run the Variable Counter App:
 - Access the app in your browser with: <code>http://localhost:3000</code>
 
 ---------------------------
-7) Fluid WebPage (ClipMine)
+6) Fluid WebPage (ClipMine)
 ---------------------------
 
 A static web page created with emphasis on fluid design, created using HTML, CSS Grids, Flexbox
 
 ------------------------
-8) Notebooks App (React)
+7) Notebooks App (React)
 ------------------------
 
 A sample app demonstrating the use of ReactJS, JavaScript, JSX, HTML, CSS, MaterialUI, Webpack, React Router, etc. on Front End and an API written in NodeJS on Back End. Core functionalities of this App:
@@ -198,7 +163,7 @@ Steps to run the Notebooks App:
 - Access the app by using secure protocol: <code>https://localhost:8080</code>
 
 ------------
-9) Redux App
+8) Redux App
 ------------
 
 A Sample Practice App involving the use of React, Redux, Redux Saga, React Router, AntDesign, etc. Core functionalities of this App:
@@ -212,7 +177,7 @@ Steps to run the Redux App:
 - Access the app in your browser with: <code>http://localhost:8080</code>
 
 --------------------
-10) Redux App (Immer)
+9) Redux App (Immer)
 --------------------
 
 A copy of <code>Redux App</code> (App # 3), but with many additional technical implementations like:
@@ -223,7 +188,7 @@ Steps to run the Redux App (Immer):
 - Same as App # 3
 
 ----------------------------
-11) Product Items App (React)
+10) Product Items App (React)
 ----------------------------
 
 A Products List & Cart App implemented using React, Redux, Ant Design, Reducers, Redux Saga, React Router, LESS, Babel, Webpack, etc. Core functionalities of this App:
@@ -242,7 +207,7 @@ Steps to run the Product Items App:
 - Access the app in your browser with: <code>http://localhost:3000</code>
 
 ----------------------------
-12) Registration Form (React)
+11) Registration Form (React)
 ----------------------------
 
 A sample Registration Form implemented in React using React Hooks, MaterialUI, React Router, Babel, Webpack, etc. Core functionalities of this App:
@@ -257,7 +222,7 @@ Steps to run the Registration Form:
 - Access the app in your browser with: <code>http://localhost:8080</code>
 
 ----------------------------
-13) Timeline Form (React)
+12) Timeline Form (React)
 ----------------------------
 
 A sample Timeline Form implemented in React using React Hooks, MaterialUI, React Router, Babel, Webpack, etc. Core functionalities of this App:
